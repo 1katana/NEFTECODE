@@ -1,0 +1,482 @@
+{
+  "generated_at_utc": "2026-09-21T10:48:08.425355+00:00",
+  "quality": {
+    "test_rows": 112,
+    "test_violations": 24,
+    "test_prevalence": 0.21428571428571427,
+    "primary": {
+      "name": "H · ПАК + residual",
+      "mae": 1.3629285313327502,
+      "rmse": 2.252604777151425,
+      "regression_rows": 101,
+      "interval_coverage_80": 0.8415841584158416,
+      "pr_auc": 0.5981217159855134,
+      "brier_selected": 0.1351264816507522,
+      "brier_raw": 0.12270107276810753,
+      "prediction_policy": "PAK passthrough in current runtime; H supplies risk and interval"
+    },
+    "pak_baseline": {
+      "name": "Текущий ПАК",
+      "mae": 1.312758012772277,
+      "rmse": 2.2626539424721153,
+      "rows": 101
+    },
+    "fallback": {
+      "name": "C · только телеметрия",
+      "mae": 1.5888288410855653,
+      "rmse": 2.4140188660367787,
+      "rows": 112,
+      "interval_coverage_80": 0.6696428571428571,
+      "pr_auc": 0.5896643419329008
+    },
+    "primary_training_id": "H_full_pak_residual_oof_calibration:2026-09-18T20:49:47.855236+00:00",
+    "fallback_training_id": "C_telemetry_only:2026-09-18T20:05:56.923155+00:00"
+  },
+  "reliability": {
+    "assets": [
+      {
+        "code": "avt_p3",
+        "name": "П-3",
+        "validation_high_rate": 0.012269228543318479,
+        "test_high_rate": 0.4085427135678392,
+        "validation_scored_rows": 17279,
+        "test_scored_rows": 11940,
+        "test_unavailable_rows": 1293,
+        "test_low_load_rows": 880
+      },
+      {
+        "code": "avt_k10",
+        "name": "К-10",
+        "validation_high_rate": 0.03512934776318074,
+        "test_high_rate": 0.453046953046953,
+        "validation_scored_rows": 17279,
+        "test_scored_rows": 12012,
+        "test_unavailable_rows": 114,
+        "test_low_load_rows": 1987
+      },
+      {
+        "code": "avt_k2",
+        "name": "К-2",
+        "validation_high_rate": 0.08640046296296296,
+        "test_high_rate": 0.31631792102598716,
+        "validation_scored_rows": 17280,
+        "test_scored_rows": 11852,
+        "test_unavailable_rows": 2043,
+        "test_low_load_rows": 218
+      },
+      {
+        "code": "hyd_regime",
+        "name": "24-2000",
+        "validation_high_rate": 0.08997348150018941,
+        "test_high_rate": 0.44995520807883377,
+        "validation_scored_rows": 15838,
+        "test_scored_rows": 12279,
+        "test_unavailable_rows": 1717,
+        "test_low_load_rows": 117
+      }
+    ],
+    "source_rows": 189217,
+    "test_start": "2026-05-01",
+    "train_end_exclusive": "2026-01-01",
+    "validation_end_exclusive": "2026-05-01",
+    "meaning": "Share of HIGH alerts among assessed snapshots; not failure accuracy"
+  },
+  "pipeline": {
+    "runs": [
+      {
+        "name": "Рост серы в сырье",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 10.16,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "HIGH_VIOLATION_PROBABILITY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Летнее товарное ДТ",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 6.8,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Зимнее товарное ДТ",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 6.8,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Выброс Q21 = 307",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 6.8,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH",
+          "Q21_OUTLIER_307_NOT_INGESTED"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Устаревший ПАК",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 7.788,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "HIGH_VIOLATION_PROBABILITY",
+          "MODEL_FALLBACK_TELEMETRY_ONLY:PAK_SULFUR_STALE"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Останов или пуск",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 6.8,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "LOW_DATA_CONFIDENCE",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Недостаток данных",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_QUALITY_MISSING"
+        ],
+        "quality_prediction": null,
+        "quality_warnings": [
+          "HYDROTREATED_SULFUR_UNAVAILABLE_FOR_BLEND",
+          "INSUFFICIENT_HISTORY",
+          "INSUFFICIENT_INPUT"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Невозможный паспорт качества",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 10.4,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Блендинг или дорогая присадка",
+        "kind": "synthetic",
+        "source": "SYNTHETIC",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_RELIABILITY_MISSING"
+        ],
+        "quality_prediction": 7.4,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "UNKNOWN",
+        "reliability_score": null,
+        "reliability_confidence": "LOW",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Исторический срез · 15 мая 10:00",
+        "kind": "historical",
+        "source": "HISTORICAL",
+        "decision": "REFUSE",
+        "reason_codes": [
+          "REFUSE_REQUIRED_QUALITY_MISSING"
+        ],
+        "quality_prediction": null,
+        "quality_warnings": [
+          "BLENDING_PLAN_MISSING",
+          "HIGH_VIOLATION_PROBABILITY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "HIGH",
+        "reliability_score": 1.0,
+        "reliability_confidence": "MEDIUM",
+        "ranked_candidates": 0
+      },
+      {
+        "name": "Расчётная смесь · 15 мая 12:00",
+        "kind": "illustrative",
+        "source": "SYNTHETIC",
+        "decision": "KEEP",
+        "reason_codes": [
+          "KEEP_CURRENT_MODE_SAFE",
+          "KEEP_TOP_CANDIDATE_IS_NO_CHANGE"
+        ],
+        "quality_prediction": 7.266,
+        "quality_warnings": [
+          "BLENDING_INPUT_NOT_PLANT_RECIPE",
+          "BLENDING_LINEAR_PROXY",
+          "POINT_ESTIMATE_PAK_PASSTHROUGH"
+        ],
+        "reliability_risk": "HIGH",
+        "reliability_score": 1.0,
+        "reliability_confidence": "MEDIUM",
+        "ranked_candidates": 1
+      }
+    ],
+    "decision_counts": {
+      "REFUSE": 10,
+      "KEEP": 1
+    },
+    "production_blockers": [
+      "NO_CONFIRMED_CONTROL_ENVELOPES",
+      "MOCK_ASSESSMENTS_NOT_REJECTED",
+      "RELIABILITY_CANDIDATE_CAUSAL_MODEL_NOT_READY",
+      "RELIABILITY_TECHNOLOGY_LIMITS_NOT_CONFIGURED"
+    ],
+    "illustrative_assumption": "Illustrative 80/20 blending recipe and component properties copied from integration/runtime/demo_request.json",
+    "historical_evidence": {
+      "pak_sulfur": 10.364849090576172,
+      "pak_d15": 835.0494,
+      "lims_sulfur_withheld": 11.9,
+      "lims_split": "test",
+      "observations": 37,
+      "pak_series": [
+        {
+          "time": "04:00",
+          "sulfur": 6.843029022216797
+        },
+        {
+          "time": "04:10",
+          "sulfur": 6.995569705963135
+        },
+        {
+          "time": "04:20",
+          "sulfur": 7.250799179077148
+        },
+        {
+          "time": "04:30",
+          "sulfur": 7.4930572509765625
+        },
+        {
+          "time": "04:40",
+          "sulfur": 7.701375961303711
+        },
+        {
+          "time": "04:50",
+          "sulfur": 7.813501358032227
+        },
+        {
+          "time": "05:00",
+          "sulfur": 7.757041931152344
+        },
+        {
+          "time": "05:10",
+          "sulfur": 7.545163631439209
+        },
+        {
+          "time": "05:20",
+          "sulfur": 7.473959445953369
+        },
+        {
+          "time": "05:30",
+          "sulfur": 7.467116355895996
+        },
+        {
+          "time": "05:40",
+          "sulfur": 7.679055213928223
+        },
+        {
+          "time": "05:50",
+          "sulfur": 8.057649612426758
+        },
+        {
+          "time": "06:00",
+          "sulfur": 8.183538436889648
+        },
+        {
+          "time": "06:10",
+          "sulfur": 8.059175491333008
+        },
+        {
+          "time": "06:20",
+          "sulfur": 8.399456977844238
+        },
+        {
+          "time": "06:30",
+          "sulfur": 8.854945182800293
+        },
+        {
+          "time": "06:40",
+          "sulfur": 8.934293746948242
+        },
+        {
+          "time": "06:50",
+          "sulfur": 8.896145820617676
+        },
+        {
+          "time": "07:00",
+          "sulfur": 8.954894065856934
+        },
+        {
+          "time": "07:10",
+          "sulfur": 9.077730178833008
+        },
+        {
+          "time": "07:20",
+          "sulfur": 9.250160217285156
+        },
+        {
+          "time": "07:30",
+          "sulfur": 9.523301124572754
+        },
+        {
+          "time": "07:40",
+          "sulfur": 9.471419334411621
+        },
+        {
+          "time": "07:50",
+          "sulfur": 9.437849044799805
+        },
+        {
+          "time": "08:00",
+          "sulfur": 9.419537544250488
+        },
+        {
+          "time": "08:10",
+          "sulfur": 9.374523162841797
+        },
+        {
+          "time": "08:20",
+          "sulfur": 9.44318962097168
+        },
+        {
+          "time": "08:30",
+          "sulfur": 9.569841384887695
+        },
+        {
+          "time": "08:40",
+          "sulfur": 9.834589958190918
+        },
+        {
+          "time": "08:50",
+          "sulfur": 9.834589958190918
+        },
+        {
+          "time": "09:00",
+          "sulfur": 9.498886108398438
+        },
+        {
+          "time": "09:10",
+          "sulfur": 9.188360214233398
+        },
+        {
+          "time": "09:20",
+          "sulfur": 9.024323463439941
+        },
+        {
+          "time": "09:30",
+          "sulfur": 9.367656707763672
+        },
+        {
+          "time": "09:40",
+          "sulfur": 9.948270797729492
+        },
+        {
+          "time": "09:50",
+          "sulfur": 10.293892860412598
+        },
+        {
+          "time": "10:00",
+          "sulfur": 10.364849090576172
+        }
+      ]
+    }
+  },
+  "sources": [
+    "Quality_neftecode/artifacts/experiments/H_full_pak_residual_oof_calibration/metrics.json",
+    "Quality_neftecode/artifacts/experiments/C_telemetry_only/metrics.json",
+    "Quality_neftecode/data/processed/split_test.csv",
+    "reliability_agent/artifacts/training_report.json",
+    "integration/scenarios/catalog.yaml",
+    "integration/examples/historical_20260515_1000.json",
+    "integration/examples/historical_20260515_1000_evidence.json",
+    "integration/examples/illustrative_blend_20260515_1200.json",
+    "integration/examples/illustrative_blend_20260515_1200_evidence.json",
+    "neftecode_optimizer/docs/recipe_and_controls_audit.md"
+  ]
+}

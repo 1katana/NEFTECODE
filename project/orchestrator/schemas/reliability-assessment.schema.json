@@ -1,0 +1,95 @@
+{
+  "$defs": {
+    "AssessmentSource": {
+      "enum": [
+        "UNKNOWN",
+        "REAL",
+        "MOCK"
+      ],
+      "title": "AssessmentSource",
+      "type": "string"
+    },
+    "DataConfidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "title": "DataConfidence",
+      "type": "string"
+    },
+    "ReliabilityRisk": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "ReliabilityRisk",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "reliability_risk": {
+      "$ref": "#/$defs/ReliabilityRisk"
+    },
+    "risk_score": {
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Risk Score",
+      "type": "number"
+    },
+    "data_confidence": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataConfidence"
+        },
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        }
+      ],
+      "title": "Data Confidence"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "risk_factors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Risk Factors",
+      "type": "array"
+    },
+    "source": {
+      "$ref": "#/$defs/AssessmentSource",
+      "default": "UNKNOWN"
+    },
+    "model_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Version"
+    }
+  },
+  "required": [
+    "reliability_risk",
+    "risk_score",
+    "data_confidence"
+  ],
+  "title": "ReliabilityAssessment",
+  "type": "object"
+}

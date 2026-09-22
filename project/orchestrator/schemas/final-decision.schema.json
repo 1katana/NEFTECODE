@@ -1,0 +1,138 @@
+{
+  "$defs": {
+    "CandidateAction": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "changes": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Changes",
+          "type": "object"
+        },
+        "delta": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Delta",
+          "type": "object"
+        },
+        "horizon_hours": {
+          "default": 1.0,
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "title": "Horizon Hours",
+          "type": "number"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "changes"
+      ],
+      "title": "CandidateAction",
+      "type": "object"
+    },
+    "Decision": {
+      "enum": [
+        "RECOMMEND",
+        "KEEP",
+        "REFUSE"
+      ],
+      "title": "Decision",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "pattern": "^1\\.0\\.0$",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "decision": {
+      "$ref": "#/$defs/Decision"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Reason Codes",
+      "type": "array"
+    },
+    "selected_candidate": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CandidateAction"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "current_state_summary": {
+      "additionalProperties": true,
+      "title": "Current State Summary",
+      "type": "object"
+    },
+    "predicted_result": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Predicted Result"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "explanation": {
+      "minLength": 1,
+      "title": "Explanation",
+      "type": "string"
+    },
+    "trace_id": {
+      "minLength": 1,
+      "title": "Trace Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "timestamp",
+    "decision",
+    "reason_codes",
+    "selected_candidate",
+    "current_state_summary",
+    "predicted_result",
+    "warnings",
+    "explanation",
+    "trace_id"
+  ],
+  "title": "FinalDecision",
+  "type": "object"
+}

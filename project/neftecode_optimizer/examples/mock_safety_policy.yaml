@@ -1,0 +1,4 @@
+# Allows only the fictional CONTROL fixture used by the mock CLI example.
+allow_mock_controls: true
+allow_non_live_actions: true
+allow_unverified_assessments_for_actions: true

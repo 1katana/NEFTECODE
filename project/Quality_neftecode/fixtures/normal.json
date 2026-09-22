@@ -1,0 +1,33 @@
+{
+  "state": {
+    "timestamp": "2026-07-10T12:00:00Z",
+    "quality": {
+      "mg_sulfur": 8.5,
+      "source": "pak",
+      "pak_d15": 845.0
+    },
+    "telemetry": {
+      "avt_t1": 130.0,
+      "hyd_t6": 362.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9,
+      "hyd_p8": 0.12
+    },
+    "data_quality": {
+      "missing": [],
+      "stale": [],
+      "outlier": []
+    },
+    "data_confidence": "HIGH",
+    "current_controls": {
+      "hyd_t6": 362.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    }
+  },
+  "candidate": {
+    "candidate_id": "NO_CHANGE",
+    "changes": {},
+    "delta": {}
+  }
+}

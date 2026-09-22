@@ -1,0 +1,292 @@
+{
+  "case": "history_09",
+  "origin": "actual_historical_state",
+  "state": {
+    "timestamp": "2026-06-20 12:00:00",
+    "source_timestamp": "2026-06-20 12:00:00",
+    "telemetry": {
+      "avt_f12": 307.0,
+      "avt_f14": 307.0,
+      "avt_f19": 307.0,
+      "avt_t20": 307.0,
+      "avt_p22": 240.0,
+      "avt_p23": 213.0,
+      "avt_f31": -1.646015763282776,
+      "avt_t33": 307.0,
+      "avt_f35": -0.338889330625534,
+      "avt_f36": -0.3914923667907715,
+      "avt_l43": 6.183260917663574,
+      "avt_f46": -0.2529513239860534,
+      "avt_t48": 37.00503921508789,
+      "avt_t49": 39.8037109375,
+      "avt_p51": 520.891357421875,
+      "avt_t55": 31.29368019104004,
+      "avt_f64": 9.260527610778809,
+      "avt_f65": 42.52530670166016,
+      "avt_p67": 307.0,
+      "hyd_f2": 307.0,
+      "hyd_p3": 0.3045827746391296,
+      "hyd_t5": 242.2507476806641,
+      "hyd_t6": 196.68869018554688,
+      "hyd_p8": 0.0088190110400319,
+      "hyd_t11": 198.19337463378903,
+      "hyd_f15": 534.0560913085938,
+      "hyd_p24": 0.3531925976276397,
+      "hyd_f26": -0.2009365260601043
+    },
+    "data_quality": {
+      "avt_f12": {
+        "age_min": 0.0,
+        "flatline_min": 1030.0,
+        "flag_missing": false
+      },
+      "avt_f14": {
+        "age_min": 0.0,
+        "flatline_min": 4100.0,
+        "flag_missing": false
+      },
+      "avt_f19": {
+        "age_min": 0.0,
+        "flatline_min": 1030.0,
+        "flag_missing": false
+      },
+      "avt_t20": {
+        "age_min": 0.0,
+        "flatline_min": 2680.0,
+        "flag_missing": false
+      },
+      "avt_p22": {
+        "age_min": 0.0,
+        "flatline_min": 1030.0,
+        "flag_missing": false
+      },
+      "avt_p23": {
+        "age_min": 0.0,
+        "flatline_min": 5990.0,
+        "flag_missing": false
+      },
+      "avt_f31": {
+        "age_min": 0.0,
+        "flatline_min": 30.0,
+        "flag_missing": false
+      },
+      "avt_t33": {
+        "age_min": 0.0,
+        "flatline_min": 2680.0,
+        "flag_missing": false
+      },
+      "avt_f35": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f36": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_l43": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f46": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t48": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t49": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p51": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t55": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f64": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f65": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p67": {
+        "age_min": 0.0,
+        "flatline_min": 5990.0,
+        "flag_missing": false
+      },
+      "hyd_f2": {
+        "age_min": 0.0,
+        "flatline_min": 3200.0,
+        "flag_missing": false
+      },
+      "hyd_p3": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t5": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t6": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p8": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t11": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f15": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p24": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f26": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      }
+    }
+  },
+  "response": {
+    "reliability_risk": "UNKNOWN",
+    "risk_score": null,
+    "data_confidence": "LOW",
+    "warnings": [
+      "ASSESSMENT_INCOMPLETE_NOT_LOW_RISK",
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "avt_k10:LOW_LOAD_OR_TRANSITION_NOT_A_FAILURE_LABEL",
+      "avt_k2:UNAVAILABLE:avt_f12",
+      "avt_k2:UNAVAILABLE:avt_f14",
+      "avt_k2:UNAVAILABLE:avt_f19",
+      "avt_k2:UNAVAILABLE:avt_p_k2",
+      "avt_k2:UNAVAILABLE:avt_t20",
+      "avt_k2:UNAVAILABLE:avt_t33",
+      "avt_p3:UNAVAILABLE:avt_t33",
+      "hyd_regime:LOW_LOAD_OR_TRANSITION_NOT_A_FAILURE_LABEL"
+    ],
+    "timestamp": "2026-06-20 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": null,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 0.75,
+        "risk_score": null,
+        "data_confidence": "LOW",
+        "warnings": [
+          "UNAVAILABLE:avt_t33"
+        ],
+        "risk_factors": [],
+        "status": "insufficient_data"
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": null,
+        "data_confidence": "LOW",
+        "warnings": [
+          "LOW_LOAD_OR_TRANSITION_NOT_A_FAILURE_LABEL"
+        ],
+        "risk_factors": [],
+        "status": "outside_active_load_scope"
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 0.25,
+        "risk_score": null,
+        "data_confidence": "LOW",
+        "warnings": [
+          "UNAVAILABLE:avt_p_k2",
+          "UNAVAILABLE:avt_t33",
+          "UNAVAILABLE:avt_t20",
+          "UNAVAILABLE:avt_f12",
+          "UNAVAILABLE:avt_f14",
+          "UNAVAILABLE:avt_f19"
+        ],
+        "risk_factors": [],
+        "status": "insufficient_data"
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 0.8888888888888888,
+        "risk_score": null,
+        "data_confidence": "LOW",
+        "warnings": [
+          "LOW_LOAD_OR_TRANSITION_NOT_A_FAILURE_LABEL"
+        ],
+        "risk_factors": [],
+        "status": "outside_active_load_scope"
+      }
+    },
+    "risk_factors": [],
+    "candidate_id": null,
+    "candidate_controls_supported": null,
+    "observation_issues": {
+      "avt_f12": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_f14": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_f19": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_p22": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_p23": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_p67": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_t20": [
+        "FLATLINE_SUSPECT"
+      ],
+      "avt_t33": [
+        "FLATLINE_SUSPECT"
+      ],
+      "hyd_f2": [
+        "FLATLINE_SUSPECT"
+      ]
+    },
+    "technology_limits_configured": false
+  }
+}

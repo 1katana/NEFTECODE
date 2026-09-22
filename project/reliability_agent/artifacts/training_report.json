@@ -1,0 +1,270 @@
+{
+  "source_rows": 189217,
+  "first": "2023-01-01 00:00:00",
+  "last": "2026-08-07 00:00:00",
+  "train_end_exclusive": "2026-01-01",
+  "validation_end_exclusive": "2026-05-01",
+  "test_start": "2026-05-01",
+  "pressure_consensus_tolerance": 0.04919731616973877,
+  "algorithm": "IsolationForest + transparent reference-tail and configured-limit rules",
+  "reference_policy": "Complete, non-flatlined, active-load observations; broad median +/- 20 IQR filter for reference only. Excluded points are retained for inference; no failure labels inferred.",
+  "metrics_note": "HIGH/MEDIUM rates below are alert rates, not precision, recall or failure probabilities.",
+  "groups": {
+    "avt_p3": {
+      "train_reference_rows": 150616,
+      "fit_sample_rows": 30000,
+      "calibration_reference_rows": 17279,
+      "load_floor_model_only": 135.6064910888672,
+      "reference_bounds": {
+        "avt_t55": {
+          "p001": 368.51483764648435,
+          "p50": 381.7569885253906,
+          "p999": 387.85287399291997
+        },
+        "avt_f31": {
+          "p001": 252.0,
+          "p50": 544.8245849609375,
+          "p999": 689.414923095705
+        },
+        "avt_t33": {
+          "p001": 325.7274716186523,
+          "p50": 338.33338928222656,
+          "p999": 343.45370391845705
+        },
+        "avt_f65": {
+          "p001": 252.0,
+          "p50": 931.8266296386719,
+          "p999": 1190.7157183837892
+        }
+      },
+      "validation": {
+        "rows": 17280,
+        "scored_rows": 17279,
+        "unavailable_rows": 0,
+        "low_load_rows_with_complete_data": 1,
+        "median_score": 0.0,
+        "high_fraction": 0.012269228543318479,
+        "medium_fraction": 0.022339255743966665
+      },
+      "test": {
+        "rows": 14113,
+        "scored_rows": 11940,
+        "unavailable_rows": 1293,
+        "low_load_rows_with_complete_data": 880,
+        "median_score": 0.0,
+        "high_fraction": 0.4085427135678392,
+        "medium_fraction": 0.027721943048576215
+      }
+    },
+    "avt_k10": {
+      "train_reference_rows": 152238,
+      "fit_sample_rows": 30000,
+      "calibration_reference_rows": 17279,
+      "load_floor_model_only": 135.82000732421875,
+      "reference_bounds": {
+        "avt_p51": {
+          "p001": 28.392813179016112,
+          "p50": 47.28790473937988,
+          "p999": 62.804259929657626
+        },
+        "avt_l43": {
+          "p001": 54.00060226821899,
+          "p50": 61.1389274597168,
+          "p999": 67.59913893890426
+        },
+        "avt_f31": {
+          "p001": 252.0,
+          "p50": 545.7750549316406,
+          "p999": 689.3123908691407
+        },
+        "avt_t55": {
+          "p001": 368.41392739868166,
+          "p50": 381.7716827392578,
+          "p999": 387.83091918945314
+        },
+        "avt_t48": {
+          "p001": 325.5153078918457,
+          "p50": 354.4284362792969,
+          "p999": 363.35635845947274
+        },
+        "avt_t49": {
+          "p001": 112.43555419921876,
+          "p50": 129.33575439453125,
+          "p999": 158.13924682617287
+        },
+        "avt_f35": {
+          "p001": 63.54117483139038,
+          "p50": 133.27986907958984,
+          "p999": 201.27662887573243
+        },
+        "avt_f36": {
+          "p001": 64.67254482269287,
+          "p50": 133.06678009033203,
+          "p999": 198.1081846008302
+        },
+        "avt_f46": {
+          "p001": 85.06832040405273,
+          "p50": 106.3798942565918,
+          "p999": 154.81007807922364
+        }
+      },
+      "validation": {
+        "rows": 17280,
+        "scored_rows": 17279,
+        "unavailable_rows": 0,
+        "low_load_rows_with_complete_data": 1,
+        "median_score": 0.0,
+        "high_fraction": 0.03512934776318074,
+        "medium_fraction": 0.08212280803287227
+      },
+      "test": {
+        "rows": 14113,
+        "scored_rows": 12012,
+        "unavailable_rows": 114,
+        "low_load_rows_with_complete_data": 1987,
+        "median_score": 0.5410847454269455,
+        "high_fraction": 0.453046953046953,
+        "medium_fraction": 0.10606060606060606
+      }
+    },
+    "avt_k2": {
+      "train_reference_rows": 150508,
+      "fit_sample_rows": 30000,
+      "calibration_reference_rows": 17280,
+      "load_floor_model_only": 232.78717041015625,
+      "reference_bounds": {
+        "avt_p_k2": {
+          "p001": 0.9799375696778296,
+          "p50": 1.1416987180709839,
+          "p999": 1.3277819694280624
+        },
+        "avt_f65": {
+          "p001": 252.0,
+          "p50": 931.7164306640625,
+          "p999": 1190.7161007080078
+        },
+        "avt_t33": {
+          "p001": 318.5311892700195,
+          "p50": 338.3304138183594,
+          "p999": 343.45806295776373
+        },
+        "avt_t20": {
+          "p001": 107.29866917419433,
+          "p50": 113.88969802856445,
+          "p999": 122.6646104125982
+        },
+        "avt_f12": {
+          "p001": 151.1557398071289,
+          "p50": 354.34300231933594,
+          "p999": 437.5627390136719
+        },
+        "avt_f14": {
+          "p001": 110.38319982147218,
+          "p50": 247.57160186767578,
+          "p999": 356.03852911377226
+        },
+        "avt_f19": {
+          "p001": 38.67088599395752,
+          "p50": 62.828392028808594,
+          "p999": 123.01400890350436
+        },
+        "avt_f64": {
+          "p001": 56.65065389251709,
+          "p50": 121.05892562866211,
+          "p999": 169.42659748840333
+        }
+      },
+      "validation": {
+        "rows": 17280,
+        "scored_rows": 17280,
+        "unavailable_rows": 0,
+        "low_load_rows_with_complete_data": 0,
+        "median_score": 0.008182751004315925,
+        "high_fraction": 0.08640046296296296,
+        "medium_fraction": 0.08142361111111111
+      },
+      "test": {
+        "rows": 14113,
+        "scored_rows": 11852,
+        "unavailable_rows": 2043,
+        "low_load_rows_with_complete_data": 218,
+        "median_score": 0.07266075257745558,
+        "high_fraction": 0.31631792102598716,
+        "medium_fraction": 0.11027674654066824
+      }
+    },
+    "hyd_regime": {
+      "train_reference_rows": 150371,
+      "fit_sample_rows": 30000,
+      "calibration_reference_rows": 15714,
+      "load_floor_model_only": 64.21073913574219,
+      "reference_bounds": {
+        "hyd_f2": {
+          "p001": 73812.49546875,
+          "p50": 93943.1953125,
+          "p999": 110276.700859375
+        },
+        "hyd_p3": {
+          "p001": 2.3956136298179627,
+          "p50": 3.662954330444336,
+          "p999": 3.847210111618042
+        },
+        "hyd_t5": {
+          "p001": 319.70406005859377,
+          "p50": 370.0220336914063,
+          "p999": 390.1324304199219
+        },
+        "hyd_t6": {
+          "p001": 316.16458404541015,
+          "p50": 362.9239501953125,
+          "p999": 388.6766845703125
+        },
+        "hyd_p8": {
+          "p001": 0.0524260438606143,
+          "p50": 0.1689198315143585,
+          "p999": 0.22687431618571283
+        },
+        "hyd_t11": {
+          "p001": 316.0670755004883,
+          "p50": 363.7958984375,
+          "p999": 386.2284408569337
+        },
+        "hyd_f15": {
+          "p001": 2193.8661181640623,
+          "p50": 3397.88232421875,
+          "p999": 3893.478500976563
+        },
+        "hyd_p24": {
+          "p001": 0.5280976855754852,
+          "p50": 0.5846482515335083,
+          "p999": 0.6513174122571946
+        },
+        "hyd_f26": {
+          "p001": 143.92755630493164,
+          "p50": 256.8341979980469,
+          "p999": 305.4922982788086
+        }
+      },
+      "validation": {
+        "rows": 17280,
+        "scored_rows": 15838,
+        "unavailable_rows": 275,
+        "low_load_rows_with_complete_data": 1167,
+        "median_score": 0.14646593321629653,
+        "high_fraction": 0.08997348150018941,
+        "medium_fraction": 0.15626973102664476
+      },
+      "test": {
+        "rows": 14113,
+        "scored_rows": 12279,
+        "unavailable_rows": 1717,
+        "low_load_rows_with_complete_data": 117,
+        "median_score": 0.49830940035325794,
+        "high_fraction": 0.44995520807883377,
+        "medium_fraction": 0.12582457854874177
+      }
+    }
+  },
+  "artifact_sha256": "b2035c913c8d90ae0c238d06ffc0f31477a39bde8e9724740f625e9b014d8d88",
+  "artifact_version": "1.0.0"
+}

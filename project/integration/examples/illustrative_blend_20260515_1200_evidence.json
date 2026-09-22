@@ -1,0 +1,24 @@
+{
+  "anchor_timestamp_local": "2026-05-15 12:00:00",
+  "observation_count": 37,
+  "input_source": "SYNTHETIC",
+  "sources": {
+    "telemetry": [
+      "data/data/avt_tags.csv",
+      "data/data/242000_tags.csv"
+    ],
+    "pak": "Выгрузка ПАК 01.01.2023 - н.в_.xlsx",
+    "lims_reference": "Quality_neftecode/data/processed/quality_training_lims_samples.csv"
+  },
+  "reference_lims": null,
+  "limitations": [
+    "No observed commercial blending recipe or confirmed blend component properties",
+    "LIMS reference is withheld from the API request to avoid temporal leakage",
+    "Source timestamps have no timezone; UTC is assigned only for API parsing",
+    "Blend shares, component properties and cost proxies are assumptions, not plant measurements",
+    "A KEEP decision validates software flow only; it does not validate blending physics or action safety"
+  ],
+  "observed_part": "Historical AVT, 24-2000 and PAK at 10-minute intervals",
+  "assumed_part": "Illustrative 80/20 blending recipe and component properties copied from integration/runtime/demo_request.json",
+  "not_an_operational_recipe": true
+}

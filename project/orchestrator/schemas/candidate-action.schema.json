@@ -1,0 +1,37 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "minLength": 1,
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "changes": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Changes",
+      "type": "object"
+    },
+    "delta": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Delta",
+      "type": "object"
+    },
+    "horizon_hours": {
+      "default": 1.0,
+      "maximum": 3.0,
+      "minimum": 0.0,
+      "title": "Horizon Hours",
+      "type": "number"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "changes"
+  ],
+  "title": "CandidateAction",
+  "type": "object"
+}

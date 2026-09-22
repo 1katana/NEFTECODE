@@ -1,0 +1,9 @@
+# DEMO ONLY. The name and values below are not production CONTROL data.
+controls:
+  demo_control:
+    basis: MOCK_FIXTURE
+    min: 0
+    max: 10
+    step: 1
+    max_delta: 1
+    unit: demo_unit

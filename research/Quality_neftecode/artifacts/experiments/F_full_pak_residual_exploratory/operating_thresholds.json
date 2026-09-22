@@ -1,0 +1,4 @@
+{
+  "violation_probability": 0.25000000000000006,
+  "selection": "maximum F1 on blocked OOF predictions"
+}

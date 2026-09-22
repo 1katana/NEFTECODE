@@ -1,0 +1,57 @@
+sulfur_limit: 10.0
+high_coverage_ratio: 0.90
+medium_coverage_ratio: 0.75
+minimum_coverage_ratio: 0.50
+minimum_history_hours: 6.0
+violation_warning_threshold: 0.50
+
+# Подтверждено экспертом: метка — момент отбора; runtime-доступность +4 часа.
+lims_timestamp_semantics: sample_collection_time
+lims_runtime_availability_delay_hours: 4
+alignment_sensitivity_offsets_minutes: [0, 60, 120]
+candidate_horizon_hours: 1.0
+candidate_supported_horizons_hours: [0, 1, 2, 3]
+candidate_effect_model:
+  type: experimental_linear_first_order_response
+  response_time_hours: 1.0
+  sulfur_sensitivity:
+    hyd_t6: -0.03  # mg/kg per degC
+    hyd_f9: 0.015  # mg/kg per t/h
+    hyd_p13: -1.5  # mg/kg per MPa
+  evidence: scenario_assumption_not_causal_historical_proof
+outlier_policy: keep_all_mae_primary_drop_gt100_sensitivity
+target_review_threshold_mg_kg: 100.0
+calibration_policy: chronological_holdout_select_raw_or_sigmoid
+
+runtime_policy:
+  point_when_pak_not_invalid: pak_passthrough
+  violation_probability_and_interval: primary_model
+  point_when_pak_invalid: telemetry_only_fallback
+  shadow_mode: true
+
+pak_sulfur_quality:
+  suspect_flatline_minutes: 30
+  invalid_flatline_minutes: 60
+  mask_value_features_when_invalid: true
+  forward_fill_invalid: false
+  diagnostic_all_history_jump_abs_q999_mg_kg: 4.784714560508652
+  jump_threshold_fit_scope: train_only
+  runtime_threshold_source: feature_schema.json
+  online_confirmation_points: 2
+
+model_variants:
+  - full
+  - telemetry_only
+
+regression_modes:
+  - direct
+  - pak_residual
+
+residual_scale_modes:
+  - none
+  - blocked_oof_mae
+
+validation:
+  split_type: calendar_blocked_expanding
+  gap_hours: 6
+  segmented_metrics: true

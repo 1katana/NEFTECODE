@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Нефтекод · Бенчмарк решения</title>
+  <style>
+    :root { color-scheme:dark; --bg:#071019; --panel:#0c1823; --panel2:#11222e; --line:#203642; --text:#f1f6f7; --muted:#91a7b0; --teal:#58dbc6; --amber:#f2bc62; --red:#ff7c82; --blue:#84b4ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter,Segoe UI,Arial,sans-serif; font-size:15px; line-height:1.55; }
+    a { color:var(--teal); }
+    button,select { font:inherit; }
+    button:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
+    .shell { max-width:1180px; margin:auto; padding:0 28px 64px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:24px; min-height:72px; margin-bottom:34px; padding:10px 0; border-bottom:1px solid var(--line); }
+    .brand { display:flex; align-items:flex-start; flex-direction:column; line-height:1.05; }
+    .brand strong { color:var(--teal); font-size:16px; font-weight:900; letter-spacing:.13em; }
+    .brand small { margin-top:6px; color:var(--muted); font-size:11px; font-weight:400; letter-spacing:.04em; }
+    .header-action { display:inline-flex; align-items:center; min-height:42px; padding:0 16px; border:1px solid #36505f; border-radius:7px; color:var(--text); font-size:13px; font-weight:750; text-decoration:none; }
+    .header-action:hover { filter:brightness(1.1); }
+    .hero { padding:4px 0 24px; }
+    .eyebrow { text-transform:uppercase; font-weight:800; letter-spacing:.11em; color:var(--teal); font-size:11px; }
+    h1 { font-size:clamp(34px,4.6vw,58px); line-height:1; letter-spacing:-.05em; max-width:720px; margin:0; }
+    nav { display:flex; gap:22px; margin:0 0 30px; border-bottom:1px solid var(--line); overflow-x:auto; }
+    nav button { min-height:48px; padding:0 0; cursor:pointer; color:var(--muted); background:transparent; border:0; border-bottom:2px solid transparent; white-space:nowrap; }
+    nav button.active,nav button:hover { color:var(--text); border-bottom-color:var(--teal); }
+    section[hidden] { display:none; }
+    .grid4 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .grid4 .card { border:0; border-right:1px solid var(--line); border-radius:0; background:transparent; }
+    .grid4 .card:last-child { border-right:0; }
+    .grid2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:22px; min-width:0; }
+    .card h3 { margin:0 0 8px; font-size:17px; }
+    .card p { margin:7px 0 0; color:var(--muted); font-size:14px; }
+    .metric-label { color:var(--muted); font-size:11px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
+    .metric { font-size:38px; font-weight:800; line-height:1.08; letter-spacing:-.04em; margin:12px 0 4px; }
+    .metric.teal { color:var(--teal); } .metric.amber { color:var(--amber); } .metric.red { color:var(--red); }
+    .section-title { margin:30px 0 14px; font-size:24px; letter-spacing:-.025em; }
+    .kicker { color:var(--muted); font-size:14px; margin:-7px 0 18px; }
+    .callout { border-left:3px solid var(--amber); background:#211f1b; padding:15px 18px; margin-top:16px; color:#dfd7c7; font-size:14px; }
+    .barrow { display:grid; grid-template-columns:180px 1fr 74px; align-items:center; gap:15px; margin:19px 0; font-size:14px; }
+    .barrow .barlabel small { display:block; color:var(--muted); font-size:12px; }
+    .track { height:10px; background:#243642; border-radius:99px; overflow:hidden; }
+    .fill { height:100%; border-radius:99px; background:var(--teal); }
+    .fill.blue { background:var(--blue); } .fill.amber { background:var(--amber); } .fill.red { background:var(--red); }
+    .barvalue { text-align:right; font-variant-numeric:tabular-nums; font-weight:800; }
+    .subtle { color:var(--muted); font-size:13px; }
+    .smallstats { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:18px; color:var(--muted); font-size:13px; }
+    .smallstats span { padding-right:18px; border-right:1px solid var(--line); }
+    .smallstats span:last-child { border-right:0; }
+    .asset { border-bottom:1px solid var(--line); padding:14px 0; }
+    .asset:last-child { border-bottom:0; }
+    .asset-head { display:flex; justify-content:space-between; gap:10px; margin-bottom:7px; font-size:14px; }
+    .asset .mini { display:grid; grid-template-columns:75px 1fr 55px; align-items:center; gap:9px; margin:7px 0; font-size:12px; color:var(--muted); }
+    .mini .track { height:8px; }
+    .mini strong { color:var(--text); text-align:right; font-variant-numeric:tabular-nums; }
+    .legend { display:flex; flex-wrap:wrap; gap:17px; color:var(--muted); font-size:12px; }
+    .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; }
+    .chart { width:100%; height:auto; display:block; }
+    .tablewrap { overflow-x:auto; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    table { border-collapse:collapse; width:100%; min-width:760px; font-size:13px; }
+    th,td { padding:13px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--muted); background:#0d1b26; font-size:11px; text-transform:uppercase; letter-spacing:.07em; }
+    tr:last-child td { border-bottom:0; }
+    tr:hover td { background:#10222d; }
+    td small { color:var(--muted); display:block; }
+    .badge { display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:800; padding:4px 8px; border-radius:6px; }
+    .badge img { width:22px; height:22px; object-fit:contain; }
+    .badge.refuse { color:var(--red); background:#40242a; }.badge.keep { color:var(--teal); background:#173837; }.badge.recommend { color:var(--amber); background:#3c3221; }
+    .controls { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin:18px 0 12px; }
+    select { min-height:40px; background:var(--panel2); color:var(--text); border:1px solid var(--line); border-radius:7px; padding:7px 10px; }
+    .row-detail { margin-top:7px; color:var(--muted); font-size:12px; }
+    .row-detail code { display:block; margin-top:6px; color:#c5d2d8; overflow-wrap:anywhere; }
+    .run-metrics { display:flex; gap:14px; flex-wrap:wrap; margin-top:7px; }
+    @media(max-width:900px) { .grid2{grid-template-columns:1fr;} }
+    @media(max-width:650px) { .shell{padding:0 14px 45px;} header{align-items:flex-start;flex-direction:column;padding:16px 0;} .grid4{grid-template-columns:1fr;} .grid4 .card{border-right:0;border-bottom:1px solid var(--line);} .grid4 .card:last-child{border-bottom:0;} .metric{font-size:32px;} .barrow{grid-template-columns:110px 1fr 58px;gap:8px;} nav{gap:18px;} }
+    @media print { body{background:white;color:black;} .shell{max-width:none;} .card{break-inside:avoid;} nav,.controls{display:none;} section[hidden]{display:block;} }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header><div class="brand"><strong>НЕФТЕКОД</strong><small>доказательная база</small></div><a class="header-action" href="benchmark_data.json" download>Скачать исходные данные</a></header>
+  <div class="hero">
+    <h1>Доказательная база системы</h1>
+  </div>
+  <nav aria-label="Разделы"><button class="active" data-tab="overview">Обзор</button><button data-tab="quality">Качество</button><button data-tab="reliability">Надёжность</button><button data-tab="pipeline">Сквозной прогон</button></nav>
+
+  <section id="overview">
+    <div class="grid4" id="kpis"></div>
+    <h2 class="section-title">Главные наблюдения</h2>
+    <div class="grid2">
+      <div class="card"><h3>Модель качества даёт дополнительный сигнал</h3><p>Классификация нарушения серы превосходит частоту нарушений как случайную базу. Точечная ошибка H на тесте чуть выше ошибки текущего ПАК, поэтому в runtime точечный прогноз берётся из ПАК.</p><div class="smallstats" id="quality-summary"></div></div>
+      <div class="card"><h3>Поздний режим отличается от калибровочного периода</h3><p>Во всех четырёх группах доля предупреждений HIGH выросла на позднем тестовом периоде. Это требует проверки с технологом; без меток отказов такая доля не является точностью прогноза поломок.</p><div class="smallstats" id="reliability-summary"></div></div>
+    </div>
+    <div class="callout" id="overview-callout"></div>
+  </section>
+
+  <section id="quality" hidden>
+    <h2 class="section-title">Качество: отложенный тест</h2>
+    <p class="kicker">Календарный test после обучения. H оценивается на строках с валидным ПАК; C — на всех тестовых строках.</p>
+    <div class="grid2">
+      <div class="card"><h3>Ошибка по сере · MAE, мг/кг</h3><div id="mae-bars"></div><p>Ниже — лучше. H и ПАК сравниваются на одинаковых 101 строках. C показан отдельно на 112 строках.</p></div>
+      <div class="card"><h3>Вероятность превышения 10 мг/кг</h3><div id="classifier-bars"></div><p>PR-AUC выше — лучше. Brier ниже — лучше. Выбранная калибровка H на этом тесте хуже необработанных вероятностей.</p></div>
+    </div>
+    <div class="smallstats" id="quality-details"></div>
+    <div class="callout">Тестовый период уже использовался при сравнении экспериментов. Для окончательного выбора модели нужен новый будущий период без настройки по его результатам.</div>
+  </section>
+
+  <section id="reliability" hidden>
+    <h2 class="section-title">Надёжность: частота предупреждений</h2>
+    <p class="kicker">Isolation Forest и исторические ориентиры. Доля HIGH считается среди оценимых 10-минутных снимков.</p>
+    <div class="grid2"><div class="card"><h3>HIGH по узлам</h3><div class="legend"><span><i class="dot" style="background:var(--blue)"></i>Калибровка · янв–апр 2026</span><span><i class="dot" style="background:var(--amber)"></i>Тест · май–авг 2026</span></div><div id="reliability-assets"></div></div><div class="card"><h3>Как читать этот график</h3><p>Числа показывают, как часто модель отмечала необычный режим. История не содержит меток отказов оборудования. Значит, по ней нельзя рассчитать precision, recall или вероятность аварии.</p><p>Рост частоты сигналов на позднем периоде может отражать новый штатный режим, изменения датчиков или действительную проблему. Для разделения этих причин нужны журналы режимов и экспертная проверка.</p><div class="smallstats" id="reliability-details"></div></div></div>
+  </section>
+
+  <section id="pipeline" hidden>
+    <h2 class="section-title">Сквозные решения API</h2>
+    <p class="kicker">Повторный запуск девяти демо-сценариев, исторического среза и расчётной смеси на основе измеренной телеметрии.</p>
+    <div class="grid2"><div class="card"><h3>Итоги запусков</h3><div id="decision-bars"></div><p>Отказ на неполных или неподтверждённых данных — ожидаемое поведение защитного контура.</p></div><div class="card"><h3>Исторический срез · 15 мая, 10:00</h3><div class="smallstats" id="historical-stats"></div><div id="pak-chart"></div><p>ЛИМС в 10:00 оставлен только как контрольная метка. Он не подавался на вход API. Рецептура товарного смешения в исходных материалах отсутствует.</p></div></div>
+    <div class="callout">Расчётная смесь 80/20 использует реальную телеметрию и ПАК, но доли и свойства компонентов взяты из учебного примера. Её результат проверяет прохождение API, а не промышленную пригодность рецептуры.</div>
+    <div class="controls"><strong>Сценарии</strong><label>Источник: <select id="source-filter"><option value="all">Все</option><option value="historical">Исторический</option><option value="illustrative">Расчётная смесь</option><option value="synthetic">Демо</option></select></label></div>
+    <div class="tablewrap"><table><thead><tr><th>Сценарий</th><th>Источник</th><th>Решение</th><th>Почему</th></tr></thead><tbody id="runs-body"></tbody></table></div>
+    <div class="callout" id="blocker-callout"></div>
+  </section>
+
+</div>
+<script>
+const DATA = /* BENCHMARK_DATA */ null;
+const $ = id => document.getElementById(id);
+const n = (x,d=2) => x == null ? '—' : Number(x).toLocaleString('ru-RU',{minimumFractionDigits:d,maximumFractionDigits:d});
+const pct = (x,d=1) => n(100*x,d) + '%';
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function bar(label,value,max,detail,color='teal',digits=2){return `<div class="barrow"><div class="barlabel">${esc(label)}<small>${esc(detail)}</small></div><div class="track"><div class="fill ${color}" style="width:${Math.max(0,Math.min(100,value/max*100))}%"></div></div><div class="barvalue">${n(value,digits)}</div></div>`;}
+const q=DATA.quality, r=DATA.reliability, p=DATA.pipeline;
+const refused=p.decision_counts.REFUSE||0, total=p.runs.length;
+$('kpis').innerHTML = [
+  ['MAE модели H',n(q.primary.mae,2),'ПАК: '+n(q.pak_baseline.mae,2)+' · одинаковые '+q.primary.regression_rows+' строк','amber'],
+  ['PR-AUC нарушения',n(q.primary.pr_auc,2),'База: '+n(q.test_prevalence,2)+' · '+q.test_violations+'/'+q.test_rows+' нарушений','teal'],
+  ['Решения API',(p.decision_counts.KEEP||0)+' KEEP · '+refused+' REFUSE','9 демо + история + расчётная смесь','teal']
+].map(([label,value,detail,color])=>`<div class="card"><div class="metric-label">${label}</div><div class="metric ${color}">${value}</div><p>${detail}</p></div>`).join('');
+$('quality-summary').innerHTML=`<span>Тест: ${q.test_rows} проб</span><span>H: ${q.primary.regression_rows} с ПАК</span><span>Покрытие 80% интервала: ${pct(q.primary.interval_coverage_80)}</span>`;
+$('reliability-summary').innerHTML=`<span>${n(r.source_rows,0)} исторических моментов</span><span>4 группы оборудования</span><span>Без меток отказов</span>`;
+$('overview-callout').textContent=`Исторический запрос без заводской рецептуры обоснованно получает REFUSE. Расчётная смесь показывает KEEP при явно предположенных долях и свойствах. Для рекомендаций изменения уставок остаются ${p.production_blockers.length} производственных ограничения.`;
+$('mae-bars').innerHTML=bar('Текущий ПАК',q.pak_baseline.mae,2,'n = '+q.pak_baseline.rows,'teal')+bar('Модель H',q.primary.mae,2,'n = '+q.primary.regression_rows,'amber')+bar('Модель C',q.fallback.mae,2,'n = '+q.fallback.rows,'blue');
+$('classifier-bars').innerHTML=bar('PR-AUC · H',q.primary.pr_auc,1,'112 проб','teal')+bar('Частота нарушений',q.test_prevalence,1,'случайная база','blue')+bar('Brier · raw',q.primary.brier_raw,.2,'ниже лучше','teal',3)+bar('Brier · selected',q.primary.brier_selected,.2,'калиброванный','amber',3);
+$('quality-details').innerHTML=`<span>H RMSE: ${n(q.primary.rmse)}</span><span>ПАК RMSE: ${n(q.pak_baseline.rmse)}</span><span>C MAE: ${n(q.fallback.mae)}</span><span>Порог серы: 10 мг/кг</span>`;
+$('reliability-assets').innerHTML=r.assets.map(a=>`<div class="asset"><div class="asset-head"><strong>${esc(a.name)}</strong><span class="subtle">test n = ${n(a.test_scored_rows,0)}</span></div><div class="mini"><span>Калибровка</span><div class="track"><div class="fill blue" style="width:${100*a.validation_high_rate}%"></div></div><strong>${pct(a.validation_high_rate)}</strong></div><div class="mini"><span>Тест</span><div class="track"><div class="fill amber" style="width:${100*a.test_high_rate}%"></div></div><strong>${pct(a.test_high_rate)}</strong></div></div>`).join('');
+$('reliability-details').innerHTML=`<span>Train до 01.01.2026</span><span>Test с ${esc(r.test_start)}</span>`;
+$('decision-bars').innerHTML=bar('REFUSE',refused,total,'защитный отказ','red',0)+bar('KEEP',p.decision_counts.KEEP||0,total,'оставить режим','teal',0)+bar('RECOMMEND',p.decision_counts.RECOMMEND||0,total,'изменить управление','amber',0);
+const h=p.historical_evidence;
+$('historical-stats').innerHTML=`<span>ПАК: ${n(h.pak_sulfur,2)} мг/кг</span><span>ЛИМС: ${n(h.lims_sulfur_withheld,1)} мг/кг · отдельно</span><span>${h.observations} точек</span>`;
+function pakChart(series){
+  const w=600,h=190,left=42,right=10,top=15,bottom=28,min=6,max=12;
+  const x=i=>left+i*(w-left-right)/(series.length-1),y=v=>top+(max-v)*(h-top-bottom)/(max-min);
+  const points=series.map((item,i)=>`${x(i).toFixed(1)},${y(item.sulfur).toFixed(1)}`).join(' ');
+  const threshold=y(10);
+  return `<svg class="chart" viewBox="0 0 ${w} ${h}" role="img" aria-label="ПАК по сере с 04:00 до 10:00; порог 10 мг/кг"><line x1="${left}" y1="${threshold}" x2="${w-right}" y2="${threshold}" stroke="#ff8f91" stroke-width="1.5" stroke-dasharray="5 5"/><text x="2" y="${threshold+4}" fill="#ff8f91" font-size="12">10</text><polyline points="${points}" fill="none" stroke="#5ce0ca" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${x(series.length-1)}" cy="${y(series.at(-1).sulfur)}" r="5" fill="#5ce0ca"/><text x="${left}" y="${h-4}" fill="#a8bbc5" font-size="11">${series[0].time}</text><text x="${w-right-32}" y="${h-4}" fill="#a8bbc5" font-size="11">${series.at(-1).time}</text></svg>`;
+}
+$('pak-chart').innerHTML=pakChart(h.pak_series);
+const reasonLabels={
+  REFUSE_REQUIRED_RELIABILITY_MISSING:'Нет подтверждённой оценки надёжности',
+  REFUSE_REQUIRED_QUALITY_MISSING:'Не хватает данных для оценки качества',
+  KEEP_CURRENT_MODE_SAFE:'Текущий режим прошёл проверку безопасности',
+  KEEP_TOP_CANDIDATE_IS_NO_CHANGE:'Лучший безопасный вариант не требует изменений'
+};
+function renderRuns(){const source=$('source-filter').value; $('runs-body').innerHTML=p.runs.filter(run=>source==='all'||run.kind===source).map(run=>{const code=run.reason_codes[0]||'—';const reason=reasonLabels[code]||code;const state=run.decision.toLowerCase();const alt=run.decision==='KEEP'?'Улыбающаяся капля':run.decision==='RECOMMEND'?'Задумчивая капля':'Грустная капля';return `<tr><td><strong>${esc(run.name)}</strong></td><td>${run.kind==='historical'?'История':run.kind==='illustrative'?'Расчётная смесь':'Демо'}<small>${esc(run.source||'—')}</small></td><td><span class="badge ${state}"><img src="assets/decision-${state}.png?v=2" alt="${alt}">${esc(run.decision)}</span></td><td>${esc(reason)}<details class="row-detail"><summary>Показатели и код</summary><div class="run-metrics"><span>Сера: ${run.quality_prediction==null?'—':n(run.quality_prediction,2)}</span><span>Надёжность: ${esc(run.reliability_risk||'—')}</span><span>Варианты: ${run.ranked_candidates}</span></div><code>${esc(code)}</code></details></td></tr>`;}).join('');}
+$('source-filter').addEventListener('change',renderRuns);renderRuns();
+const blockerLabels={NO_CONFIRMED_CONTROL_ENVELOPES:'не подтверждены рабочие границы управления',MOCK_ASSESSMENTS_NOT_REJECTED:'нужно исключить тестовые оценки',RELIABILITY_CANDIDATE_CAUSAL_MODEL_NOT_READY:'нет модели отклика на изменение уставок',RELIABILITY_TECHNOLOGY_LIMITS_NOT_CONFIGURED:'не настроены технологические ограничения'};
+$('blocker-callout').innerHTML=`<strong>Для промышленного применения ещё требуется:</strong> ${p.production_blockers.map(code=>esc(blockerLabels[code]||code)).join('; ')}.`;
+document.querySelectorAll('nav button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(item=>item.classList.toggle('active',item===button));document.querySelectorAll('section').forEach(section=>section.hidden=section.id!==button.dataset.tab);button.focus();}));
+</script>
+</body>
+</html>

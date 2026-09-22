@@ -1,0 +1,43 @@
+{
+  "state": {
+    "timestamp": "2026-07-10T12:00:00Z",
+    "quality": {
+      "mg_sulfur": 9.9,
+      "source": "pak",
+      "pak_d15": 848.0
+    },
+    "telemetry": {
+      "avt_t1": 130.0,
+      "hyd_t6": 362.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9,
+      "hyd_p8": 0.12
+    },
+    "data_quality": {
+      "missing": [],
+      "stale": ["pak_d15"],
+      "outlier": []
+    },
+    "data_confidence": "MEDIUM",
+    "current_controls": {
+      "hyd_t6": 362.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    }
+  },
+  "candidate": {
+    "candidate_id": "candidate-hotter-reactor",
+    "changes": {
+      "hyd_t6": 364.0
+    },
+    "delta": {
+      "hyd_t6": 2.0
+    }
+  },
+  "expected_when_history_is_insufficient": {
+    "quality_prediction": null,
+    "violation_probability": null,
+    "data_confidence": "UNKNOWN",
+    "warnings": ["INSUFFICIENT_INPUT", "EXPERIMENTAL_LINEAR_COUNTERFACTUAL"]
+  }
+}

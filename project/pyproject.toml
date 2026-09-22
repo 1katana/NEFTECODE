@@ -1,0 +1,2 @@
+[tool.uv.workspace]
+members = ["orchestrator", "Quality_neftecode", "neftecode_optimizer", "reliability_agent", "integration"]

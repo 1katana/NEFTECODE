@@ -1,0 +1,10 @@
+{
+  "source": "SYNTHETIC",
+  "timestamp": "2026-01-01T00:00:00+03:00",
+  "values": {
+    "demo_control": 5.0
+  },
+  "metadata": {
+    "timestamp_semantics": "LIMS sample collection time"
+  }
+}

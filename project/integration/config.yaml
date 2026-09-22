@@ -1,0 +1,24 @@
+quality_runtime_config: ../Quality_neftecode/configs/runtime_shadow.yaml
+shadow_gates_config: ../Quality_neftecode/configs/shadow_gates.yaml
+trace_path: runtime/orchestrator_trace.jsonl
+quality_shadow_log_path: runtime/quality_shadow.jsonl
+optimizer_control_config: ../neftecode_optimizer/optimization/control_config.yaml
+optimizer_safety_policy: ../neftecode_optimizer/optimization/safety_policy.yaml
+reliability_policy: ../reliability_agent/policy.json
+component_timeout_ms: 2000
+optimization_timeout_ms: 15000
+max_candidates: 100
+max_changed_controls: 2
+# Hydrotreater sulfur is combined with an explicit editable blend plan.
+quality_product: COMMERCIAL_DIESEL
+cors_origins:
+  - http://localhost:3000
+  - http://localhost:5173
+  - http://localhost:4173
+  - http://127.0.0.1:4173
+  - https://neftecode-orchestrator-console.yabalbes15.chatgpt.site
+adapter_modes:
+  quality: real_h_plus_c_shadow_with_linear_blending
+  reliability: real_regime_proxy_candidate_static
+  safety: optimizer_internal_policy
+  optimization: local_optimizer_fail_closed

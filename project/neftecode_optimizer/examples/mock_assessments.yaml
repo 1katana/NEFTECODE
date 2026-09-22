@@ -1,0 +1,50 @@
+# Integration fixture only. These values are not process predictions.
+quality:
+  default:
+    product: COMMERCIAL_DIESEL
+    grade: SUMMER
+    metrics: &safe_metrics
+      sulfur_mg_kg: 8.5
+      t95_c: 350
+      density_kg_m3: 835
+      cetane_number: 52
+      blend_share_sum_pct: 100
+      additive_pct: 0
+      relative_cost: 1.0
+    quality_prediction: 8.5
+    prediction_lower: 8.0
+    prediction_upper: 9.0
+    violation_probability: 0.10
+    data_confidence: HIGH
+  by_candidate:
+    KEEP:
+      product: COMMERCIAL_DIESEL
+      grade: SUMMER
+      metrics: *safe_metrics
+      quality_prediction: 8.5
+      prediction_lower: 8.0
+      prediction_upper: 9.0
+      violation_probability: 0.08
+      data_confidence: HIGH
+    C001:
+      product: COMMERCIAL_DIESEL
+      grade: SUMMER
+      metrics:
+        sulfur_mg_kg: 8.2
+        t95_c: 350
+        density_kg_m3: 835
+        cetane_number: 52
+        blend_share_sum_pct: 100
+        additive_pct: 0
+        relative_cost: 1.0
+      quality_prediction: 8.2
+      prediction_lower: 7.8
+      prediction_upper: 8.8
+      violation_probability: 0.02
+      data_confidence: HIGH
+reliability:
+  default:
+    reliability_risk: LOW
+    risk_score: 0.10
+    data_confidence: HIGH
+    warnings: []

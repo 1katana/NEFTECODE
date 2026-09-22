@@ -1,0 +1,262 @@
+{
+  "$defs": {
+    "AssessmentSource": {
+      "enum": [
+        "UNKNOWN",
+        "REAL",
+        "MOCK"
+      ],
+      "title": "AssessmentSource",
+      "type": "string"
+    },
+    "DataConfidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "title": "DataConfidence",
+      "type": "string"
+    },
+    "ProductQualityMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "sulfur_mg_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sulfur Mg Kg"
+        },
+        "t95_c": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "T95 C"
+        },
+        "density_kg_m3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Density Kg M3"
+        },
+        "cetane_number": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cetane Number"
+        },
+        "blend_share_sum_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Blend Share Sum Pct"
+        },
+        "additive_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Additive Pct"
+        },
+        "relative_cost": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Cost"
+        }
+      },
+      "title": "ProductQualityMetrics",
+      "type": "object"
+    },
+    "QualityProduct": {
+      "enum": [
+        "UNKNOWN",
+        "HYDROTREATED_DIESEL",
+        "COMMERCIAL_DIESEL"
+      ],
+      "title": "QualityProduct",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "quality_prediction": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Quality Prediction"
+    },
+    "prediction_lower": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prediction Lower"
+    },
+    "prediction_upper": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prediction Upper"
+    },
+    "violation_probability": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Violation Probability"
+    },
+    "data_confidence": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataConfidence"
+        },
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        }
+      ],
+      "title": "Data Confidence"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    },
+    "product": {
+      "$ref": "#/$defs/QualityProduct",
+      "default": "UNKNOWN"
+    },
+    "source": {
+      "$ref": "#/$defs/AssessmentSource",
+      "default": "UNKNOWN"
+    },
+    "model_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Version"
+    },
+    "grade": {
+      "anyOf": [
+        {
+          "enum": [
+            "SUMMER",
+            "WINTER"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Grade"
+    },
+    "metrics": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProductQualityMetrics"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "candidate_horizon_hours": {
+      "anyOf": [
+        {
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Candidate Horizon Hours"
+    }
+  },
+  "required": [
+    "quality_prediction",
+    "violation_probability",
+    "data_confidence"
+  ],
+  "title": "QualityAssessment",
+  "type": "object"
+}

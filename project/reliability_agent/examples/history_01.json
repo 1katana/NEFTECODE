@@ -1,0 +1,300 @@
+{
+  "case": "history_01",
+  "origin": "actual_historical_state",
+  "state": {
+    "timestamp": "2023-02-01 12:00:00",
+    "source_timestamp": "2023-02-01 12:00:00",
+    "telemetry": {
+      "avt_f12": 375.4803771972656,
+      "avt_f14": 263.7795715332031,
+      "avt_f19": 47.962181091308594,
+      "avt_t20": 113.85704803466795,
+      "avt_p22": 1.0898730754852295,
+      "avt_p23": 1.0912706851959229,
+      "avt_f31": 564.2078857421875,
+      "avt_t33": 335.5984191894531,
+      "avt_f35": 141.4691162109375,
+      "avt_f36": 141.58798217773438,
+      "avt_l43": 61.33391189575195,
+      "avt_f46": 103.02072143554688,
+      "avt_t48": 356.9057312011719,
+      "avt_t49": 135.9418182373047,
+      "avt_p51": 45.91984176635742,
+      "avt_t55": 382.6118469238281,
+      "avt_f64": 116.34413146972656,
+      "avt_f65": 878.2758178710938,
+      "avt_p67": 1.0933302640914917,
+      "hyd_f2": 92636.6015625,
+      "hyd_p3": 3.770429849624634,
+      "hyd_t5": 362.3478698730469,
+      "hyd_t6": 359.6260986328125,
+      "hyd_p8": 0.1420732289552688,
+      "hyd_t11": 361.25042724609375,
+      "hyd_f15": 2896.908935546875,
+      "hyd_p24": 0.6190220713615417,
+      "hyd_f26": 254.5056610107422
+    },
+    "data_quality": {
+      "avt_f12": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f14": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f19": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t20": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p22": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p23": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f31": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t33": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f35": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f36": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_l43": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f46": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t48": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t49": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p51": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t55": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f64": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f65": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p67": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f2": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p3": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t5": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t6": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p8": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t11": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f15": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p24": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f26": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      }
+    }
+  },
+  "response": {
+    "reliability_risk": "LOW",
+    "risk_score": 0.21614510233974643,
+    "data_confidence": "MEDIUM",
+    "warnings": [
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "hyd_regime:HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+    ],
+    "timestamp": "2023-02-01 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": 0.21614510233974643,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 1.0,
+        "risk_score": 0.21614510233974643,
+        "data_confidence": "MEDIUM",
+        "warnings": [
+          "HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_p24",
+            "value": 0.6190220713615417,
+            "score": 0.21614510233974643,
+            "direction": "high",
+            "reference_p001": 0.5280976855754852,
+            "reference_p999": 0.6513174122571946,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          },
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_f15",
+            "value": 2896.908935546875,
+            "score": 0.12519803517897535,
+            "direction": "low",
+            "reference_p001": 2193.8661181640623,
+            "reference_p999": 3893.478500976563,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.21614510233974643
+      }
+    },
+    "risk_factors": [
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_p24",
+        "value": 0.6190220713615417,
+        "score": 0.21614510233974643,
+        "direction": "high",
+        "reference_p001": 0.5280976855754852,
+        "reference_p999": 0.6513174122571946,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_f15",
+        "value": 2896.908935546875,
+        "score": 0.12519803517897535,
+        "direction": "low",
+        "reference_p001": 2193.8661181640623,
+        "reference_p999": 3893.478500976563,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      }
+    ],
+    "candidate_id": null,
+    "candidate_controls_supported": null,
+    "observation_issues": {},
+    "technology_limits_configured": false
+  }
+}

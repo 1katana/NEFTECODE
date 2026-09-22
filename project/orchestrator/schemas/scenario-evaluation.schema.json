@@ -1,0 +1,262 @@
+{
+  "$defs": {
+    "CandidateAction": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "changes": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Changes",
+          "type": "object"
+        },
+        "delta": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Delta",
+          "type": "object"
+        },
+        "horizon_hours": {
+          "default": 1.0,
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "title": "Horizon Hours",
+          "type": "number"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "changes"
+      ],
+      "title": "CandidateAction",
+      "type": "object"
+    },
+    "ProductQualityMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "sulfur_mg_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sulfur Mg Kg"
+        },
+        "t95_c": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "T95 C"
+        },
+        "density_kg_m3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Density Kg M3"
+        },
+        "cetane_number": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cetane Number"
+        },
+        "blend_share_sum_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Blend Share Sum Pct"
+        },
+        "additive_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Additive Pct"
+        },
+        "relative_cost": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Cost"
+        }
+      },
+      "title": "ProductQualityMetrics",
+      "type": "object"
+    },
+    "ReliabilityRisk": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "ReliabilityRisk",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "candidate": {
+      "$ref": "#/$defs/CandidateAction"
+    },
+    "quality_prediction": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Quality Prediction"
+    },
+    "violation_probability": {
+      "anyOf": [
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Violation Probability"
+    },
+    "reliability_risk": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ReliabilityRisk"
+        },
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reliability Risk"
+    },
+    "constraint_passed": {
+      "title": "Constraint Passed",
+      "type": "boolean"
+    },
+    "violations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Violations",
+      "type": "array"
+    },
+    "score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Score"
+    },
+    "grade": {
+      "anyOf": [
+        {
+          "enum": [
+            "SUMMER",
+            "WINTER"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Grade"
+    },
+    "metrics": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ProductQualityMetrics"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "candidate_horizon_hours": {
+      "anyOf": [
+        {
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Candidate Horizon Hours"
+    }
+  },
+  "required": [
+    "candidate",
+    "quality_prediction",
+    "violation_probability",
+    "reliability_risk",
+    "constraint_passed",
+    "violations",
+    "score"
+  ],
+  "title": "ScenarioEvaluation",
+  "type": "object"
+}

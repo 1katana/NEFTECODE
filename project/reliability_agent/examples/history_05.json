@@ -1,0 +1,277 @@
+{
+  "case": "history_05",
+  "origin": "actual_historical_state",
+  "state": {
+    "timestamp": "2024-10-01 12:00:00",
+    "source_timestamp": "2024-10-01 12:00:00",
+    "telemetry": {
+      "avt_f12": 322.3878173828125,
+      "avt_f14": 223.070556640625,
+      "avt_f19": 64.49968719482422,
+      "avt_t20": 114.99374389648438,
+      "avt_p22": 1.136876106262207,
+      "avt_p23": 1.1251046657562256,
+      "avt_f31": 480.3399963378906,
+      "avt_t33": 338.8150329589844,
+      "avt_f35": 135.55023193359375,
+      "avt_f36": 132.98117065429688,
+      "avt_l43": 60.834999084472656,
+      "avt_f46": 102.07513427734376,
+      "avt_t48": 354.0517883300781,
+      "avt_t49": 118.30438995361328,
+      "avt_p51": 44.37528610229492,
+      "avt_t55": 379.7123107910156,
+      "avt_f64": 110.2208480834961,
+      "avt_f65": 843.7942504882812,
+      "avt_p67": 1.1159255504608154,
+      "hyd_f2": 92099.2578125,
+      "hyd_p3": 3.4186739921569824,
+      "hyd_t5": 363.7891845703125,
+      "hyd_t6": 356.3996276855469,
+      "hyd_p8": 0.1804698854684829,
+      "hyd_t11": 357.93634033203125,
+      "hyd_f15": 3011.34423828125,
+      "hyd_p24": 0.6016393899917603,
+      "hyd_f26": 237.6771545410156
+    },
+    "data_quality": {
+      "avt_f12": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f14": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f19": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t20": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p22": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p23": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f31": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t33": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f35": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f36": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_l43": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f46": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t48": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t49": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p51": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t55": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f64": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f65": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p67": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f2": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p3": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t5": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t6": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p8": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t11": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f15": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p24": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f26": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      }
+    }
+  },
+  "response": {
+    "reliability_risk": "LOW",
+    "risk_score": 0.07940457220595784,
+    "data_confidence": "MEDIUM",
+    "warnings": [
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "hyd_regime:HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+    ],
+    "timestamp": "2024-10-01 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": 0.07940457220595784,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 1.0,
+        "risk_score": 0.07940457220595784,
+        "data_confidence": "MEDIUM",
+        "warnings": [
+          "HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_p3",
+            "value": 3.4186739921569824,
+            "score": 0.07940457220595784,
+            "direction": "low",
+            "reference_p001": 2.3956136298179627,
+            "reference_p999": 3.847210111618042,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.07940457220595784
+      }
+    },
+    "risk_factors": [
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_p3",
+        "value": 3.4186739921569824,
+        "score": 0.07940457220595784,
+        "direction": "low",
+        "reference_p001": 2.3956136298179627,
+        "reference_p999": 3.847210111618042,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      }
+    ],
+    "candidate_id": null,
+    "candidate_controls_supported": null,
+    "observation_issues": {},
+    "technology_limits_configured": false
+  }
+}

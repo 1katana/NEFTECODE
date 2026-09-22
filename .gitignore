@@ -1,0 +1,92 @@
+# Python environments and bytecode
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Installed/editable package metadata and build output
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+pip-wheel-metadata/
+
+# Test, type-checker and linter caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+
+# Logs, process files and temporary output
+*.log
+*.pid
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+~$*
+.tmp/
+tmp/
+temp/
+catboost_info/
+/runtime_services/
+
+# Runtime journals. Keep integration/runtime/demo_request.json.
+/project/integration/runtime/*.jsonl
+/project/integration/runtime/*.log
+/project/integration/runtime/*.pid
+/project/Quality_neftecode/runtime/
+/project/orchestrator/output/
+
+# Large raw telemetry and generated training tables stay local.
+# avt_tags.csv is about 236 MB and cannot be pushed to ordinary GitHub.
+/research/data/data/*.csv
+/research/Quality_neftecode/data/
+/research/Выгрузка ПАК 01.01.2023 - н.в_.xlsx
+/research/ЛИМСы 01.01.2023 - н.в_ (2).xlsx
+
+# Archives and local transfer packages
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+# Generated service uploads and scratch exports
+neftecode-upload-*/
+*_temporary.csv
+*_temporary.json
+
+# Local assembly bookkeeping (contains machine-specific paths/checksums)
+/assembly_manifest.json
+/release_checksums.json

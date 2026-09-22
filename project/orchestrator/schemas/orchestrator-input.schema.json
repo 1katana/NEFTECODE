@@ -1,0 +1,1035 @@
+{
+  "$defs": {
+    "AssessmentSource": {
+      "enum": [
+        "UNKNOWN",
+        "REAL",
+        "MOCK"
+      ],
+      "title": "AssessmentSource",
+      "type": "string"
+    },
+    "CandidateAction": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "changes": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Changes",
+          "type": "object"
+        },
+        "delta": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Delta",
+          "type": "object"
+        },
+        "horizon_hours": {
+          "default": 1.0,
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "title": "Horizon Hours",
+          "type": "number"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "changes"
+      ],
+      "title": "CandidateAction",
+      "type": "object"
+    },
+    "ComponentResult_OptimizationResult_": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/ComponentStatus"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/OptimizationResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ComponentResult[OptimizationResult]",
+      "type": "object"
+    },
+    "ComponentResult_QualityAssessment_": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/ComponentStatus"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/QualityAssessment"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ComponentResult[QualityAssessment]",
+      "type": "object"
+    },
+    "ComponentResult_ReliabilityAssessment_": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/ComponentStatus"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReliabilityAssessment"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ComponentResult[ReliabilityAssessment]",
+      "type": "object"
+    },
+    "ComponentResult_SafetyResult_": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/ComponentStatus"
+        },
+        "data": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SafetyResult"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        },
+        "message": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Message"
+        },
+        "latency_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latency Ms"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "title": "ComponentResult[SafetyResult]",
+      "type": "object"
+    },
+    "ComponentStatus": {
+      "enum": [
+        "OK",
+        "TIMEOUT",
+        "ERROR",
+        "INVALID_RESPONSE",
+        "UNAVAILABLE"
+      ],
+      "title": "ComponentStatus",
+      "type": "string"
+    },
+    "DataConfidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "title": "DataConfidence",
+      "type": "string"
+    },
+    "InputSource": {
+      "enum": [
+        "SYNTHETIC",
+        "HISTORICAL",
+        "LIVE"
+      ],
+      "title": "InputSource",
+      "type": "string"
+    },
+    "OptimizationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "$ref": "#/$defs/OptimizationStatus"
+        },
+        "ranked_candidates": {
+          "items": {
+            "$ref": "#/$defs/RankedCandidate"
+          },
+          "title": "Ranked Candidates",
+          "type": "array"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "input_source": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/InputSource"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "uses_mock_assessments": {
+          "default": false,
+          "title": "Uses Mock Assessments",
+          "type": "boolean"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "selection_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Selection Reason"
+        },
+        "generated_count": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Generated Count",
+          "type": "integer"
+        },
+        "search_truncated": {
+          "default": false,
+          "title": "Search Truncated",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "ranked_candidates"
+      ],
+      "title": "OptimizationResult",
+      "type": "object"
+    },
+    "OptimizationStatus": {
+      "enum": [
+        "SUCCESS",
+        "NO_FEASIBLE_SOLUTION"
+      ],
+      "title": "OptimizationStatus",
+      "type": "string"
+    },
+    "ProcessState": {
+      "additionalProperties": false,
+      "properties": {
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "quality": {
+          "additionalProperties": true,
+          "title": "Quality",
+          "type": "object"
+        },
+        "telemetry": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Telemetry",
+          "type": "object"
+        },
+        "data_quality": {
+          "additionalProperties": true,
+          "title": "Data Quality",
+          "type": "object"
+        },
+        "data_confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataConfidence"
+            },
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            }
+          ],
+          "title": "Data Confidence"
+        },
+        "current_controls": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Current Controls",
+          "type": "object"
+        }
+      },
+      "required": [
+        "timestamp",
+        "quality",
+        "telemetry",
+        "data_quality",
+        "data_confidence"
+      ],
+      "title": "ProcessState",
+      "type": "object"
+    },
+    "ProductQualityMetrics": {
+      "additionalProperties": false,
+      "properties": {
+        "sulfur_mg_kg": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sulfur Mg Kg"
+        },
+        "t95_c": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "T95 C"
+        },
+        "density_kg_m3": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Density Kg M3"
+        },
+        "cetane_number": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cetane Number"
+        },
+        "blend_share_sum_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Blend Share Sum Pct"
+        },
+        "additive_pct": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Additive Pct"
+        },
+        "relative_cost": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Cost"
+        }
+      },
+      "title": "ProductQualityMetrics",
+      "type": "object"
+    },
+    "QualityAssessment": {
+      "additionalProperties": false,
+      "properties": {
+        "quality_prediction": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Quality Prediction"
+        },
+        "prediction_lower": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prediction Lower"
+        },
+        "prediction_upper": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prediction Upper"
+        },
+        "violation_probability": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Violation Probability"
+        },
+        "data_confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataConfidence"
+            },
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            }
+          ],
+          "title": "Data Confidence"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "product": {
+          "$ref": "#/$defs/QualityProduct",
+          "default": "UNKNOWN"
+        },
+        "source": {
+          "$ref": "#/$defs/AssessmentSource",
+          "default": "UNKNOWN"
+        },
+        "model_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Version"
+        },
+        "grade": {
+          "anyOf": [
+            {
+              "enum": [
+                "SUMMER",
+                "WINTER"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Grade"
+        },
+        "metrics": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProductQualityMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "candidate_horizon_hours": {
+          "anyOf": [
+            {
+              "maximum": 3.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Horizon Hours"
+        }
+      },
+      "required": [
+        "quality_prediction",
+        "violation_probability",
+        "data_confidence"
+      ],
+      "title": "QualityAssessment",
+      "type": "object"
+    },
+    "QualityProduct": {
+      "enum": [
+        "UNKNOWN",
+        "HYDROTREATED_DIESEL",
+        "COMMERCIAL_DIESEL"
+      ],
+      "title": "QualityProduct",
+      "type": "string"
+    },
+    "RankedCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "score_components": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Score Components",
+          "type": "object"
+        },
+        "candidate": {
+          "$ref": "#/$defs/CandidateAction"
+        }
+      },
+      "required": [
+        "rank",
+        "candidate"
+      ],
+      "title": "RankedCandidate",
+      "type": "object"
+    },
+    "ReliabilityAssessment": {
+      "additionalProperties": false,
+      "properties": {
+        "reliability_risk": {
+          "$ref": "#/$defs/ReliabilityRisk"
+        },
+        "risk_score": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "title": "Risk Score",
+          "type": "number"
+        },
+        "data_confidence": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DataConfidence"
+            },
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            }
+          ],
+          "title": "Data Confidence"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "risk_factors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Risk Factors",
+          "type": "array"
+        },
+        "source": {
+          "$ref": "#/$defs/AssessmentSource",
+          "default": "UNKNOWN"
+        },
+        "model_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Version"
+        }
+      },
+      "required": [
+        "reliability_risk",
+        "risk_score",
+        "data_confidence"
+      ],
+      "title": "ReliabilityAssessment",
+      "type": "object"
+    },
+    "ReliabilityRisk": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "title": "ReliabilityRisk",
+      "type": "string"
+    },
+    "SafetyResult": {
+      "additionalProperties": false,
+      "properties": {
+        "constraint_passed": {
+          "title": "Constraint Passed",
+          "type": "boolean"
+        },
+        "violations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Violations",
+          "type": "array"
+        },
+        "rejection_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rejection Reason"
+        }
+      },
+      "required": [
+        "constraint_passed",
+        "violations"
+      ],
+      "title": "SafetyResult",
+      "type": "object"
+    },
+    "ScenarioEvaluation": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate": {
+          "$ref": "#/$defs/CandidateAction"
+        },
+        "quality_prediction": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Quality Prediction"
+        },
+        "violation_probability": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Violation Probability"
+        },
+        "reliability_risk": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ReliabilityRisk"
+            },
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reliability Risk"
+        },
+        "constraint_passed": {
+          "title": "Constraint Passed",
+          "type": "boolean"
+        },
+        "violations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Violations",
+          "type": "array"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Score"
+        },
+        "grade": {
+          "anyOf": [
+            {
+              "enum": [
+                "SUMMER",
+                "WINTER"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Grade"
+        },
+        "metrics": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProductQualityMetrics"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "candidate_horizon_hours": {
+          "anyOf": [
+            {
+              "maximum": 3.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candidate Horizon Hours"
+        }
+      },
+      "required": [
+        "candidate",
+        "quality_prediction",
+        "violation_probability",
+        "reliability_risk",
+        "constraint_passed",
+        "violations",
+        "score"
+      ],
+      "title": "ScenarioEvaluation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "pattern": "^1\\.0\\.0$",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "process_state": {
+      "$ref": "#/$defs/ProcessState"
+    },
+    "current_quality": {
+      "$ref": "#/$defs/ComponentResult_QualityAssessment_"
+    },
+    "current_reliability": {
+      "$ref": "#/$defs/ComponentResult_ReliabilityAssessment_"
+    },
+    "current_safety": {
+      "$ref": "#/$defs/ComponentResult_SafetyResult_"
+    },
+    "scenarios": {
+      "items": {
+        "$ref": "#/$defs/ScenarioEvaluation"
+      },
+      "title": "Scenarios",
+      "type": "array"
+    },
+    "optimization": {
+      "$ref": "#/$defs/ComponentResult_OptimizationResult_"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "process_state",
+    "current_quality",
+    "current_reliability",
+    "current_safety",
+    "scenarios",
+    "optimization"
+  ],
+  "title": "OrchestratorInput",
+  "type": "object"
+}

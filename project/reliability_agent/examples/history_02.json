@@ -1,0 +1,338 @@
+{
+  "case": "history_02",
+  "origin": "actual_historical_state",
+  "state": {
+    "timestamp": "2023-06-01 12:00:00",
+    "source_timestamp": "2023-06-01 12:00:00",
+    "telemetry": {
+      "avt_f12": 361.7034606933594,
+      "avt_f14": 234.2293701171875,
+      "avt_f19": 47.900917053222656,
+      "avt_t20": 114.42257690429688,
+      "avt_p22": 1.183771014213562,
+      "avt_p23": 1.1818811893463137,
+      "avt_f31": 496.7152404785156,
+      "avt_t33": 333.0584716796875,
+      "avt_f35": 122.27369689941406,
+      "avt_f36": 122.6244659423828,
+      "avt_l43": 61.645503997802734,
+      "avt_f46": 103.37931060791016,
+      "avt_t48": 350.9815979003906,
+      "avt_t49": 140.74673461914062,
+      "avt_p51": 46.22378540039063,
+      "avt_t55": 384.0074157714844,
+      "avt_f64": 103.03474426269533,
+      "avt_f65": 824.7813720703125,
+      "avt_p67": 1.181291103363037,
+      "hyd_f2": 105873.34375,
+      "hyd_p3": 3.6719970703125,
+      "hyd_t5": 368.2198791503906,
+      "hyd_t6": 364.4829711914063,
+      "hyd_p8": 0.1361273825168609,
+      "hyd_t11": 365.1692199707031,
+      "hyd_f15": 3058.01611328125,
+      "hyd_p24": 0.579159677028656,
+      "hyd_f26": 216.0155487060547
+    },
+    "data_quality": {
+      "avt_f12": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f14": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f19": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t20": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p22": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p23": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f31": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t33": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f35": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f36": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_l43": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f46": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t48": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t49": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p51": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_t55": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f64": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_f65": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "avt_p67": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f2": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p3": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t5": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t6": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p8": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_t11": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f15": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_p24": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      },
+      "hyd_f26": {
+        "age_min": 0.0,
+        "flatline_min": 0.0,
+        "flag_missing": false
+      }
+    }
+  },
+  "response": {
+    "reliability_risk": "MEDIUM",
+    "risk_score": 0.3679908216831095,
+    "data_confidence": "MEDIUM",
+    "warnings": [
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "hyd_regime:HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+    ],
+    "timestamp": "2023-06-01 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": 0.3679908216831095,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 1.0,
+        "risk_score": 0.3442892982231031,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "avt_t33",
+            "value": 333.0584716796875,
+            "score": 0.19068517595966894,
+            "direction": "low",
+            "reference_p001": 325.7274716186523,
+            "reference_p999": 343.45370391845705,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          },
+          {
+            "code": "UNUSUAL_COMBINATION",
+            "kind": "ml_domain",
+            "score": 0.3442892982231031,
+            "description": "Нетипичное совместное состояние сигналов группы"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.3442892982231031,
+        "reference_tail_score": 0.19068517595966894
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 1.0,
+        "risk_score": 0.10542175353952472,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "avt_t33",
+            "value": 333.0584716796875,
+            "score": 0.10542175353952472,
+            "direction": "low",
+            "reference_p001": 318.5311892700195,
+            "reference_p999": 343.45806295776373,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.10542175353952472
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 1.0,
+        "risk_score": 0.3679908216831095,
+        "data_confidence": "MEDIUM",
+        "warnings": [
+          "HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_f2",
+            "value": 105873.34375,
+            "score": 0.3679908216831095,
+            "direction": "high",
+            "reference_p001": 73812.49546875,
+            "reference_p999": 110276.700859375,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.3679908216831095
+      }
+    },
+    "risk_factors": [
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "avt_t33",
+        "value": 333.0584716796875,
+        "score": 0.19068517595966894,
+        "direction": "low",
+        "reference_p001": 325.7274716186523,
+        "reference_p999": 343.45370391845705,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "avt_p3"
+      },
+      {
+        "code": "UNUSUAL_COMBINATION",
+        "kind": "ml_domain",
+        "score": 0.3442892982231031,
+        "description": "Нетипичное совместное состояние сигналов группы",
+        "asset": "avt_p3"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "avt_t33",
+        "value": 333.0584716796875,
+        "score": 0.10542175353952472,
+        "direction": "low",
+        "reference_p001": 318.5311892700195,
+        "reference_p999": 343.45806295776373,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "avt_k2"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_f2",
+        "value": 105873.34375,
+        "score": 0.3679908216831095,
+        "direction": "high",
+        "reference_p001": 73812.49546875,
+        "reference_p999": 110276.700859375,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      }
+    ],
+    "candidate_id": null,
+    "candidate_controls_supported": null,
+    "observation_issues": {},
+    "technology_limits_configured": false
+  }
+}

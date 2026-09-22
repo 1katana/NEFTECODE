@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "demo-low-confidence-001",
+  "process_state": {
+    "timestamp": "2026-07-10T12:00:00Z",
+    "quality": {
+      "mg_sulfur": 6.7,
+      "source": "lims"
+    },
+    "telemetry": {
+      "hyd_t6": 342.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    },
+    "data_quality": {
+      "missing": [],
+      "stale": [],
+      "outlier": []
+    },
+    "data_confidence": "LOW",
+    "current_controls": {
+      "hyd_t6": 342.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    }
+  },
+  "current_quality": {
+    "status": "OK",
+    "data": {
+      "quality_prediction": 6.7,
+      "prediction_lower": 6.2,
+      "prediction_upper": 7.3,
+      "violation_probability": 0.02,
+      "data_confidence": "HIGH",
+      "warnings": [],
+      "product": "UNKNOWN",
+      "source": "UNKNOWN",
+      "model_version": null,
+      "grade": null,
+      "metrics": null,
+      "candidate_horizon_hours": null
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "current_reliability": {
+    "status": "OK",
+    "data": {
+      "reliability_risk": "LOW",
+      "risk_score": 0.12,
+      "data_confidence": "HIGH",
+      "warnings": [],
+      "risk_factors": [],
+      "source": "UNKNOWN",
+      "model_version": null
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "current_safety": {
+    "status": "OK",
+    "data": {
+      "constraint_passed": true,
+      "violations": [],
+      "rejection_reason": null
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "scenarios": [],
+  "optimization": {
+    "status": "OK",
+    "data": {
+      "status": "NO_FEASIBLE_SOLUTION",
+      "ranked_candidates": [],
+      "reasons": [
+        "NO_BETTER_SAFE_ACTION"
+      ],
+      "input_source": "LIVE",
+      "uses_mock_assessments": false,
+      "warnings": [],
+      "selection_reason": null,
+      "generated_count": 0,
+      "search_truncated": false
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  }
+}

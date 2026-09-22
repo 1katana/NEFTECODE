@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "demo-refuse-001",
+  "process_state": {
+    "timestamp": "2026-07-10T12:00:00Z",
+    "quality": {
+      "mg_sulfur": 11.2,
+      "source": "pak"
+    },
+    "telemetry": {
+      "hyd_t6": 342.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    },
+    "data_quality": {
+      "missing": [],
+      "stale": [],
+      "outlier": []
+    },
+    "data_confidence": "HIGH",
+    "current_controls": {
+      "hyd_t6": 342.0,
+      "hyd_f9": 218.0,
+      "hyd_p13": 3.9
+    }
+  },
+  "current_quality": {
+    "status": "OK",
+    "data": {
+      "quality_prediction": 11.2,
+      "prediction_lower": 10.4,
+      "prediction_upper": 12.0,
+      "violation_probability": 0.68,
+      "data_confidence": "HIGH",
+      "warnings": [],
+      "product": "UNKNOWN",
+      "source": "UNKNOWN",
+      "model_version": null,
+      "grade": null,
+      "metrics": null,
+      "candidate_horizon_hours": null
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "current_reliability": {
+    "status": "OK",
+    "data": {
+      "reliability_risk": "HIGH",
+      "risk_score": 0.91,
+      "data_confidence": "HIGH",
+      "warnings": [],
+      "risk_factors": [
+        "MODE_NEAR_QUALITY_LIMIT"
+      ],
+      "source": "UNKNOWN",
+      "model_version": null
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "current_safety": {
+    "status": "OK",
+    "data": {
+      "constraint_passed": false,
+      "violations": [
+        "SULFUR_LIMIT",
+        "RELIABILITY_LIMIT"
+      ],
+      "rejection_reason": "SULFUR_LIMIT, RELIABILITY_LIMIT"
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  },
+  "scenarios": [],
+  "optimization": {
+    "status": "OK",
+    "data": {
+      "status": "NO_FEASIBLE_SOLUTION",
+      "ranked_candidates": [],
+      "reasons": [
+        "ALL_CANDIDATES_REJECTED"
+      ],
+      "input_source": "LIVE",
+      "uses_mock_assessments": false,
+      "warnings": [],
+      "selection_reason": null,
+      "generated_count": 0,
+      "search_truncated": false
+    },
+    "error_code": null,
+    "message": null,
+    "latency_ms": 12
+  }
+}

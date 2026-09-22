@@ -1,0 +1,9 @@
+# Neftecode 2.0 requires Python 3.11 or newer.
+# Run from the Neftecode_relise directory:
+#   python -m pip install -r requirements.txt
+
+-e ./project/orchestrator
+-e ./project/Quality_neftecode
+-e ./project/neftecode_optimizer
+-e ./project/reliability_agent
+-e ./project/integration

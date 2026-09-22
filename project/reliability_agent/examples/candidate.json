@@ -1,0 +1,7 @@
+{
+  "candidate_id": "hypothetical_temperature_plus_20",
+  "mode": "delta",
+  "changes": {
+    "avt_t55": 20
+  }
+}

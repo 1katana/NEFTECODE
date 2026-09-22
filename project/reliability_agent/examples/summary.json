@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2023-02-01 12:00",
+    "level": "LOW",
+    "score": 0.21614510233974643,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2023-06-01 12:00",
+    "level": "MEDIUM",
+    "score": 0.3679908216831095,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2023-12-01 12:00",
+    "level": "HIGH",
+    "score": 0.7683408881085521,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2024-04-01 12:00",
+    "level": "UNKNOWN",
+    "score": null,
+    "confidence": "LOW"
+  },
+  {
+    "timestamp": "2024-10-01 12:00",
+    "level": "LOW",
+    "score": 0.07940457220595784,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2025-03-01 12:00",
+    "level": "LOW",
+    "score": 0.08572080203137089,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2025-09-01 12:00",
+    "level": "HIGH",
+    "score": 1.0,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2026-02-01 12:00",
+    "level": "MEDIUM",
+    "score": 0.5518252536798715,
+    "confidence": "MEDIUM"
+  },
+  {
+    "timestamp": "2026-06-20 12:00",
+    "level": "UNKNOWN",
+    "score": null,
+    "confidence": "LOW"
+  },
+  {
+    "timestamp": "2026-08-01 12:00",
+    "level": "HIGH",
+    "score": 1.0,
+    "confidence": "MEDIUM"
+  }
+]

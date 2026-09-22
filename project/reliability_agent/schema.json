@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReliabilityAgent HTTP request v1",
+  "type": "object",
+  "required": ["state"],
+  "properties": {
+    "state": {"$ref": "#/$defs/ProcessState"},
+    "candidate": {"anyOf": [{"$ref": "#/$defs/CandidateAction"}, {"type": "null"}]}
+  },
+  "$defs": {
+    "ProcessState": {
+      "type": "object", "required": ["timestamp", "telemetry"],
+      "properties": {
+        "timestamp": {"type": "string", "description": "ISO timestamp. Naive time allowed; use consistent timezone conventions."},
+        "source_timestamp": {"type": "string"},
+        "telemetry": {"type": "object", "additionalProperties": {"type": ["number", "null"]}},
+        "data_quality": {"type": "object", "description": "Per-tag flags/age/flatline, or flat <tag>_flag_missing/stale/outlier boolean fields."},
+        "scope": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["avt_p3", "avt_k10", "avt_k2", "hyd_regime"]}}
+      }
+    },
+    "CandidateAction": {
+      "type": "object", "required": ["changes"],
+      "properties": {
+        "candidate_id": {"type": "string"},
+        "mode": {"enum": ["absolute", "delta"], "default": "absolute"},
+        "changes": {"type": "object", "additionalProperties": {"type": "number"}}
+      }
+    },
+    "ReliabilityAssessment": {
+      "type": "object", "required": ["reliability_risk", "risk_score", "data_confidence", "warnings"],
+      "properties": {
+        "reliability_risk": {"enum": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"]},
+        "risk_score": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "data_confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

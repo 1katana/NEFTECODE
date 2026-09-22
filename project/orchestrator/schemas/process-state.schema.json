@@ -1,0 +1,75 @@
+{
+  "$defs": {
+    "DataConfidence": {
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "UNKNOWN"
+      ],
+      "title": "DataConfidence",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "timestamp": {
+      "format": "date-time",
+      "title": "Timestamp",
+      "type": "string"
+    },
+    "quality": {
+      "additionalProperties": true,
+      "title": "Quality",
+      "type": "object"
+    },
+    "telemetry": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Telemetry",
+      "type": "object"
+    },
+    "data_quality": {
+      "additionalProperties": true,
+      "title": "Data Quality",
+      "type": "object"
+    },
+    "data_confidence": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DataConfidence"
+        },
+        {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "type": "number"
+        }
+      ],
+      "title": "Data Confidence"
+    },
+    "current_controls": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Current Controls",
+      "type": "object"
+    }
+  },
+  "required": [
+    "timestamp",
+    "quality",
+    "telemetry",
+    "data_quality",
+    "data_confidence"
+  ],
+  "title": "ProcessState",
+  "type": "object"
+}

@@ -1,0 +1,140 @@
+# Редактируемые what-if сценарии. Это модельные входы, не заводские рецептуры.
+scenarios:
+  feed_sulfur_increase:
+    title: Рост серы в сырье
+    description: Рост серы отражён ростом текущего ПАК гидроочищенного ДТ.
+    history_tail_state_overrides:
+      - quality:
+          feed_sulfur_mg_kg: 14500
+          mg_sulfur: 12.0
+      - quality:
+          feed_sulfur_mg_kg: 14750
+          mg_sulfur: 12.1
+      - quality:
+          feed_sulfur_mg_kg: 15000
+          mg_sulfur: 12.2
+    state_overrides:
+      quality:
+        feed_sulfur_mg_kg: 15000
+        mg_sulfur: 12.2
+
+  summer_product:
+    title: Летнее товарное ДТ
+    description: Плотность 820–845 кг/м3, цетановое число не ниже 51.
+    state_overrides:
+      quality:
+        blending:
+          grade: SUMMER
+
+  winter_product:
+    title: Зимнее товарное ДТ
+    description: Плотность 800–845 кг/м3, цетановое число не ниже 49.
+    state_overrides:
+      quality:
+        blending:
+          grade: WINTER
+          components:
+            - name: hydrotreated
+              share_pct: 80.0
+              share_control: blend_hydrotreated_share_pct
+              use_hydrotreated_sulfur: true
+              t95_c: 350.0
+              density_kg_m3: 815.0
+              cetane_number: 48.0
+              relative_cost: 1.0
+            - name: low_sulfur_tank
+              share_pct: 20.0
+              share_control: blend_low_sulfur_share_pct
+              sulfur_mg_kg: 2.0
+              t95_c: 345.0
+              density_kg_m3: 805.0
+              cetane_number: 54.0
+              relative_cost: 1.08
+
+  q21_outlier_307:
+    title: Выброс Q21 = 307
+    description: Значение-сентинел исключается из признаков, используется fallback.
+    state_overrides:
+      telemetry:
+        hyd_q21: 307.0
+
+  stale_pak:
+    title: Устаревший ПАК
+    description: ПАК серы помечен устаревшим, прогноз переключается на telemetry-only.
+    state_overrides:
+      data_quality:
+        stale: [pak_mg_sulfur]
+
+  startup_shutdown:
+    title: Останов или пуск
+    description: Телеметрия недоступна, Safety блокирует любые рекомендации.
+    state_overrides:
+      data_quality:
+        operating_mode: STARTUP
+        telemetry_available: false
+      data_confidence: LOW
+
+  insufficient_data:
+    title: Недостаток данных
+    description: История удалена, чтобы проверить fail-closed поведение модели.
+    history_limit: 0
+    state_overrides:
+      data_confidence: LOW
+
+  impossible_quality_passport:
+    title: Невозможный паспорт качества
+    description: Все доступные компоненты нарушают несколько товарных ограничений.
+    state_overrides:
+      quality:
+        blending:
+          grade: SUMMER
+          components:
+            - name: hydrotreated
+              share_pct: 80.0
+              share_control: blend_hydrotreated_share_pct
+              use_hydrotreated_sulfur: true
+              t95_c: 375.0
+              density_kg_m3: 855.0
+              cetane_number: 44.0
+              relative_cost: 1.0
+            - name: offspec_tank
+              share_pct: 20.0
+              share_control: blend_low_sulfur_share_pct
+              sulfur_mg_kg: 20.0
+              t95_c: 370.0
+              density_kg_m3: 850.0
+              cetane_number: 45.0
+              relative_cost: 0.95
+
+  blending_vs_additive:
+    title: Блендинг или дорогая присадка
+    description: Низкое ЦЧ компенсируется редкой дорогой присадкой; цена редактируема.
+    state_overrides:
+      current_controls:
+        blend_hydrotreated_share_pct: 90.0
+        blend_low_sulfur_share_pct: 10.0
+        cetane_additive_pct: 2.2
+      quality:
+        blending:
+          grade: SUMMER
+          components:
+            - name: hydrotreated
+              share_pct: 90.0
+              share_control: blend_hydrotreated_share_pct
+              use_hydrotreated_sulfur: true
+              t95_c: 350.0
+              density_kg_m3: 835.0
+              cetane_number: 47.0
+              relative_cost: 1.0
+            - name: high_cetane_tank
+              share_pct: 10.0
+              share_control: blend_low_sulfur_share_pct
+              sulfur_mg_kg: 2.0
+              t95_c: 345.0
+              density_kg_m3: 825.0
+              cetane_number: 55.0
+              relative_cost: 1.12
+          additive_pct: 2.2
+          additive_control: cetane_additive_pct
+          cetane_gain_per_pct: 1.5
+          additive_relative_cost: 100.0

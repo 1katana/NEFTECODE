@@ -1,0 +1,39 @@
+# Technical defaults for integration. Review policy with the team.
+sulfur_limit_mg_kg: 10
+t95_max_c: 360
+summer_density_min_kg_m3: 820
+summer_density_max_kg_m3: 845
+winter_density_min_kg_m3: 800
+winter_density_max_kg_m3: 845
+summer_cetane_min: 51
+winter_cetane_min: 49
+blend_share_total_pct: 100
+blend_share_tolerance_pct: 0.05
+additive_max_pct: 3
+require_commercial_metrics: true
+use_prediction_upper: true
+rejected_confidences: [LOW]
+rejected_reliability_risks: [CRITICAL]
+# Optional team decision; null means rank by probability without a hard cutoff.
+max_violation_probability: null
+# TODO: approved required features and model applicability bounds.
+required_inputs:
+  - hyd_t6
+  - hyd_f9
+  - hyd_p13
+  - blend_hydrotreated_share_pct
+  - blend_low_sulfur_share_pct
+  - cetane_additive_pct
+model_bounds:
+  hyd_t6: {min: 340.0, max: 385.0}
+  hyd_f9: {min: 170.0, max: 270.0}
+  hyd_p13: {min: 3.6, max: 4.1}
+# Mock CLI accepts mock assessments; set true to reject them.
+reject_mock_assessments: false
+# Experimental/model and pure mock ranges require explicit opt-in.
+allow_experimental_controls: true
+allow_mock_controls: false
+# Non-live inputs and non-REAL agent responses cannot produce an action
+# unless a demo policy explicitly allows it.
+allow_non_live_actions: false
+allow_unverified_assessments_for_actions: false

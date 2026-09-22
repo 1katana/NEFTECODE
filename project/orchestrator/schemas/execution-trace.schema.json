@@ -1,0 +1,218 @@
+{
+  "$defs": {
+    "CandidateAction": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "minLength": 1,
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "changes": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Changes",
+          "type": "object"
+        },
+        "delta": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Delta",
+          "type": "object"
+        },
+        "horizon_hours": {
+          "default": 1.0,
+          "maximum": 3.0,
+          "minimum": 0.0,
+          "title": "Horizon Hours",
+          "type": "number"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "changes"
+      ],
+      "title": "CandidateAction",
+      "type": "object"
+    },
+    "ComponentStatus": {
+      "enum": [
+        "OK",
+        "TIMEOUT",
+        "ERROR",
+        "INVALID_RESPONSE",
+        "UNAVAILABLE"
+      ],
+      "title": "ComponentStatus",
+      "type": "string"
+    },
+    "Decision": {
+      "enum": [
+        "RECOMMEND",
+        "KEEP",
+        "REFUSE"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "FinalDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "pattern": "^1\\.0\\.0$",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "run_id": {
+          "minLength": 1,
+          "title": "Run Id",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "decision": {
+          "$ref": "#/$defs/Decision"
+        },
+        "reason_codes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Reason Codes",
+          "type": "array"
+        },
+        "selected_candidate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CandidateAction"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "current_state_summary": {
+          "additionalProperties": true,
+          "title": "Current State Summary",
+          "type": "object"
+        },
+        "predicted_result": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Predicted Result"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        },
+        "explanation": {
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        },
+        "trace_id": {
+          "minLength": 1,
+          "title": "Trace Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "run_id",
+        "timestamp",
+        "decision",
+        "reason_codes",
+        "selected_candidate",
+        "current_state_summary",
+        "predicted_result",
+        "warnings",
+        "explanation",
+        "trace_id"
+      ],
+      "title": "FinalDecision",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "trace_id": {
+      "minLength": 1,
+      "title": "Trace Id",
+      "type": "string"
+    },
+    "run_id": {
+      "minLength": 1,
+      "title": "Run Id",
+      "type": "string"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "finished_at": {
+      "format": "date-time",
+      "title": "Finished At",
+      "type": "string"
+    },
+    "input_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Input Digest",
+      "type": "string"
+    },
+    "component_statuses": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ComponentStatus"
+      },
+      "title": "Component Statuses",
+      "type": "object"
+    },
+    "scenario_count": {
+      "minimum": 0,
+      "title": "Scenario Count",
+      "type": "integer"
+    },
+    "safe_scenario_count": {
+      "minimum": 0,
+      "title": "Safe Scenario Count",
+      "type": "integer"
+    },
+    "input_snapshot": {
+      "additionalProperties": true,
+      "title": "Input Snapshot",
+      "type": "object"
+    },
+    "decision": {
+      "$ref": "#/$defs/FinalDecision"
+    }
+  },
+  "required": [
+    "trace_id",
+    "run_id",
+    "started_at",
+    "finished_at",
+    "input_digest",
+    "component_statuses",
+    "scenario_count",
+    "safe_scenario_count",
+    "input_snapshot",
+    "decision"
+  ],
+  "title": "ExecutionTrace",
+  "type": "object"
+}

@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quality-agent"
+version = "0.1.0"
+description = "QualityAgent for MAS: sulfur prediction + violation probability"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.6",
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "openpyxl>=3.1",
+    "catboost>=1.2",
+    "scikit-learn>=1.4",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4", "mypy>=1.9"]
+
+[project.scripts]
+quality-agent = "quality_agent.cli:app"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+extend-ignore = ["B008"] # Typer declares CLI options through function defaults.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["quality_agent*"]
+exclude = ["tests*", "venv*", "data*"]
+
+[tool.setuptools.package-data]
+quality_agent = ["py.typed"]

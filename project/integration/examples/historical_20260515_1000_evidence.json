@@ -1,0 +1,25 @@
+{
+  "anchor_timestamp_local": "2026-05-15 10:00:00",
+  "observation_count": 37,
+  "input_source": "HISTORICAL",
+  "sources": {
+    "telemetry": [
+      "data/data/avt_tags.csv",
+      "data/data/242000_tags.csv"
+    ],
+    "pak": "Выгрузка ПАК 01.01.2023 - н.в_.xlsx",
+    "lims_reference": "Quality_neftecode/data/processed/quality_training_lims_samples.csv"
+  },
+  "reference_lims": {
+    "sample_id": "lims_hydro2_sulfur_20260515T100000",
+    "sample_timestamp": "2026-05-15 10:00:00",
+    "sulfur_mg_kg": 11.9,
+    "calendar_split": "test",
+    "used_as_model_input": false
+  },
+  "limitations": [
+    "No observed commercial blending recipe or confirmed blend component properties",
+    "LIMS reference is withheld from the API request to avoid temporal leakage",
+    "Source timestamps have no timezone; UTC is assigned only for API parsing"
+  ]
+}

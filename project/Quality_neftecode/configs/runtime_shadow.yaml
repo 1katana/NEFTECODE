@@ -1,0 +1,8 @@
+mode: shadow
+primary_artifacts: ../artifacts/experiments/H_full_pak_residual_oof_calibration
+telemetry_fallback_artifacts: ../artifacts/experiments/C_telemetry_only
+point_policy: pak_passthrough
+shadow_log: ../runtime/shadow.jsonl
+timeout_ms: 2000
+include_features_in_shadow: true
+candidate_effect_config: modeling.yaml

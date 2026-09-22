@@ -1,0 +1,34 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "constraint_passed": {
+      "title": "Constraint Passed",
+      "type": "boolean"
+    },
+    "violations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Violations",
+      "type": "array"
+    },
+    "rejection_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rejection Reason"
+    }
+  },
+  "required": [
+    "constraint_passed",
+    "violations"
+  ],
+  "title": "SafetyResult",
+  "type": "object"
+}

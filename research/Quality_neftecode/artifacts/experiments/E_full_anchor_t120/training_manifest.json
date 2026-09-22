@@ -1,0 +1,17 @@
+{
+  "schema_version": "quality-lims-samples-v2",
+  "schema_sha256": "0eff54087e61bf84b79fcc6f0f5e35a3c305653827166543931aeb9ad30a36ec",
+  "model_variant": "full",
+  "regression_target_max": null,
+  "regression_mode": "direct",
+  "artifacts": [
+    "sulfur_reg.cbm",
+    "sulfur_reg_lo.cbm",
+    "sulfur_reg_hi.cbm",
+    "sulfur_clf.cbm",
+    "calibrator.pkl",
+    "feature_schema.json",
+    "metrics.json",
+    "operating_thresholds.json"
+  ]
+}

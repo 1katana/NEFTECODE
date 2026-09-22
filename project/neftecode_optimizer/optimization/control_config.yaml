@@ -1,0 +1,46 @@
+# Tag identities T6/F9/P13 are expert-confirmed. Their envelopes below are
+# editable model ranges and are deliberately NOT labeled as plant-approved.
+candidate_horizon_hours: 1.0
+controls:
+  hyd_t6:
+    basis: EXPERIMENTAL_MODEL
+    min: 340.0
+    max: 385.0
+    step: 1.0
+    max_delta: 5.0
+    unit: degC
+  hyd_f9:
+    basis: EXPERIMENTAL_MODEL
+    min: 170.0
+    max: 270.0
+    step: 2.0
+    max_delta: 10.0
+    unit: t/h
+  hyd_p13:
+    basis: EXPERIMENTAL_MODEL
+    min: 3.6
+    max: 4.1
+    step: 0.02
+    max_delta: 0.10
+    unit: MPa
+  blend_hydrotreated_share_pct:
+    basis: EXPERIMENTAL_MODEL
+    min: 50.0
+    max: 100.0
+    step: 5.0
+    max_delta: 10.0
+    unit: percent
+  blend_low_sulfur_share_pct:
+    basis: EXPERIMENTAL_MODEL
+    min: 0.0
+    max: 50.0
+    step: 5.0
+    max_delta: 10.0
+    unit: percent
+  cetane_additive_pct:
+    basis: EXPERIMENTAL_MODEL
+    min: 0.0
+    max: 3.0
+    step: 0.25
+    max_delta: 0.5
+    unit: percent

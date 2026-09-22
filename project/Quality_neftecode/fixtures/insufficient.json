@@ -1,0 +1,23 @@
+{
+  "state": {
+    "timestamp": "2026-07-10T12:00:00Z",
+    "quality": {},
+    "telemetry": {
+      "hyd_t6": null
+    },
+    "data_quality": {
+      "missing": ["pak_mg_sulfur", "avt"],
+      "stale": [],
+      "outlier": []
+    },
+    "data_confidence": "UNKNOWN",
+    "current_controls": {}
+  },
+  "candidate": null,
+  "expected": {
+    "quality_prediction": null,
+    "violation_probability": null,
+    "data_confidence": "UNKNOWN",
+    "warnings": ["INSUFFICIENT_INPUT"]
+  }
+}

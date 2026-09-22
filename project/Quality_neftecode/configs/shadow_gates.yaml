@@ -1,0 +1,9 @@
+# Provisional gates for deciding whether shadow results are ready for human review.
+# Passing them never promotes a model automatically.
+promotion_gates:
+  minimum_matched_samples: 100
+  minimum_observation_days: 60
+  minimum_fallback_samples: 20
+  maximum_selected_mae_vs_pak_ratio: 1.0
+  maximum_brier_vs_prevalence_ratio: 1.0
+  minimum_interval_coverage: 0.75

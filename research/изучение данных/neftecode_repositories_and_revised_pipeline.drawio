@@ -1,0 +1,564 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT" pages="8">
+  <diagram id="d9c8aa472662" name="1. Карта репозиториев">
+    <mxGraphModel dx="1364" dy="1226" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="m1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#D9EAF7,#001C00);strokeColor=light-dark(#5B9BD5,#00CC00);fontSize=16;align=center;verticalAlign=middle;spacing=8;arcSize=5;" value="&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;LostRunes -&amp;nbsp;шаблон логики советчика&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; качество → модель реакции процесса → ограничения → перебор режимов → рекомендация&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="360" x="190" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#D9EAF7,#2B2B00);strokeColor=light-dark(#5B9BD5,#CCCC00);fontSize=16;align=center;verticalAlign=middle;spacing=8;arcSize=5;" value="&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;&lt;font&gt;InduTS-SS - сравнение моделей&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;загрузка данных → модели временных рядов → обучение → метрики → сравнение&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="360" x="190" y="276.25" as="geometry" />
+        </mxCell>
+        <mxCell id="m3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#D9EAF7,#33001A);strokeColor=light-dark(#5B9BD5,#FF6666);fontSize=16;align=center;verticalAlign=middle;spacing=8;arcSize=4;" value="&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;SRU LSTM - оптимизатор&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp;данные → LSTM → H₂S/SO₂ → Streamlit&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="360" x="1250" y="276.25" as="geometry" />
+        </mxCell>
+        <mxCell id="m4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#D9EAF7,#1A1A1A);strokeColor=light-dark(#5B9BD5,#808080);fontSize=16;align=center;verticalAlign=middle;spacing=8;arcSize=3;" value="&lt;div&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;IDAES PSE - на вырост&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;физические модели + схема процесса + математическая оптимизация + суррогатные модели&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="360" x="1250" y="673.75" as="geometry" />
+        </mxCell>
+        <mxCell id="m5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#E4DFEC,#CCCCCC);strokeColor=light-dark(#8064A2,#FF99CC);fontSize=15;align=center;verticalAlign=middle;spacing=8;" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;НАШ ПРОЕКТ&lt;/span&gt;&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="130" width="420" x="670" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="me1" edge="1" parent="1" source="m1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="m5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;архитектура рекомендаций&lt;/font&gt;">
+          <mxGeometry relative="1" x="0.0303" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="550" y="760" />
+              <mxPoint x="775" y="760" />
+            </Array>
+            <mxPoint x="505" y="814.9999999999998" as="sourcePoint" />
+            <mxPoint x="825" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="me2" edge="1" parent="1" source="m2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;сравнение моделей&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="775" y="500" />
+            </Array>
+            <mxPoint x="440" y="250.00000000000023" as="sourcePoint" />
+            <mxPoint x="775" y="559.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="me3" edge="1" parent="1" source="m3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="m5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;учебный LSTM-референс&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="501.29" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="me4" edge="1" parent="1" source="m4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;dashed=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="m5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;идея строгой оптимизации&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="985" y="748.71" />
+            </Array>
+            <mxPoint x="1730" y="835" as="sourcePoint" />
+            <mxPoint x="1150" y="620.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mlg1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#E2F0D9,#1A3300);strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" value="Можно взять / подключить" vertex="1">
+          <mxGeometry height="55" width="270" x="190" y="935" as="geometry" />
+        </mxCell>
+        <mxCell id="mlg2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#FFF2CC,#333300);strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" value="Нужно адаптировать" vertex="1">
+          <mxGeometry height="55" width="270" x="190" y="521.25" as="geometry" />
+        </mxCell>
+        <mxCell id="mlg3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#F4CCCC,#33001A);strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" value="Разрабатываем сами" vertex="1">
+          <mxGeometry height="55" width="270" x="1250" y="521.25" as="geometry" />
+        </mxCell>
+        <mxCell id="mlg4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" value="Позже / не в MVP" vertex="1">
+          <mxGeometry height="55" width="270" x="1250" y="918.75" as="geometry" />
+        </mxCell>
+        <mxCell id="T2eXHYpH9wd5A11yN7f9-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 72px;&quot;&gt;Обзор готовых решений&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="840" x="10" y="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="3e5f9a2f8657" name="3. InduTS-SS — что берём">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i_t" value="InduTS-SS — готовая лаборатория для виртуальных анализаторов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" value="Наш подготовленный датасет X = температуры/давления/расходы Y = сера" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="190" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" value="Загрузчик данных + нормализация + окна времени" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="400" y="190" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="i3" value="Конфигурация YAML какая модель, длина окна, горизонт, параметры обучения" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="710" y="170" width="290" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i4" value="Каталог моделей LSTM/GRU/Transformer/CNN/GNN/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="170" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="i5" value="Единый цикл обучение → проверка → тест" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="190" width="250" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="i6" value="Метрики + TensorBoard + сохранённые веса + сравнение моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="430" width="280" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="i7" value="Выбираем лучшую модель для нашего QualityAgent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="700" y="450" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ie0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i1" target="i2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ie1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i2" target="i3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ie2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i3" target="i4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ie3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i4" target="i5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ie4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i5" target="i6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ie5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="i6" target="i7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i_take" value="МОЖНО ИСПОЛЬЗОВАТЬ НАПРЯМУЮ  • экспериментальный каркас • загрузчики/цикл обучения как основу • реестр моделей • конфигурации YAML • метрики, логирование, checkpoints • готовые модели временных рядов • готовые SRU/DC примеры  Лицензия Apache-2.0." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="650" width="490" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="i_adapt" value="НУЖНО АДАПТИРОВАТЬ  • подключить наш processed dataset • определить именно нашу цель «сера» • настроить длину исторического окна и горизонт прогноза • обеспечить временное разделение данных под наш сценарий • ограничить число экспериментов: baseline + 1–2 сложные модели" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="650" width="490" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="i_own" value="НЕ ЗАКРЫВАЕТ — ПИШЕМ САМИ  • синхронизацию ЛИМС/ПАК/телеметрии • правила свежести и отказа • физические/модельные ограничения • поиск управляющих действий • оценку риска оборудования • оркестратор агентов • рабочий интерфейс советчика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="650" width="490" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="i_note" value="Не переносим весь InduTS-SS в рабочее приложение. Лучше держать его как отдельный «испытательный стенд»: сравнили модели → победителя завернули в наш простой интерфейс predict()." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="180" y="960" width="1440" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="e7f1325bf15e" name="4. SRU LSTM — что берём">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s_t" value="Efficient SRU LSTM — небольшой понятный пример нейросети для временных данных" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" value="IN_Table.csv измеряемые параметры" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Окна прошлых значений последовательность во времени" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="480" y="200" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="LSTM-модель запоминает изменения во времени" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="840" y="200" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" value="Прогноз H₂S / SO₂" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="200" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" value="Streamlit GUI для H₂S" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="200" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="se0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s3" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="s4" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_take" value="ПОЛЕЗНО КАК УЧЕБНЫЙ ПРИМЕР  • как превращать временную таблицу в последовательности • как LSTM получает несколько прошлых моментов и выдаёт прогноз • отдельные модели для показателей качества • простой Streamlit-прототип" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="560" width="460" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="s_adapt" value="МОЖНО ПОВТОРИТЬ В ЭКСПЕРИМЕНТЕ  • заменить H₂S/SO₂ на нашу серу • подобрать наше временное окно • сравнить LSTM с CatBoost/другой простой моделью  Но проще запускать LSTM через InduTS-SS, чем тащить этот notebook в production." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="670" y="560" width="460" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="s_own" value="ЧЕГО ЗДЕСЬ НЕТ ДЛЯ НАШЕГО ТЗ  • безопасного оптимизатора режимов • жёстких ограничений • моделей реакции установки на действия • мультиагентности • ЛИМС/ПАК и свежести данных • проверяемого REFUSE  Это не готовая архитектура нашей системы." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="560" width="460" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="s_note" value="Несмотря на слово «Optimization» в названии, README описывает прежде всего LSTM-прогноз H₂S/SO₂ и GUI; готового constrained optimizer в структуре репозитория не заявлено. Явная лицензия на странице также не обнаружена — используем как reference, не копируем код." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="900" width="1300" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="f9d03139a3bd" name="5. IDAES — что берём">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d_t" value="IDAES PSE — инженерный конструктор для физического моделирования и оптимизации" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="Схема процесса Flowsheet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="90" y="190" width="250" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Модели аппаратов колонна, реактор, теплообменник..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="410" y="190" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="Физические свойства и материально-энергетические связи" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="750" y="190" width="290" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="Ограничения T, P, расходы, составы..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="190" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d5" value="Pyomo / solver ищет оптимальный режим" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="190" width="270" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d6" value="Суррогатные модели ALAMO / PySMO / Keras / ONNX через OMLT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9EAF7;strokeColor=#5B9BD5;fontSize=16;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="580" y="440" width="350" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="d7" value="Можно встроить ML в математическую модель процесса" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="455" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="de0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d3" target="d4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d4" target="d5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d6" target="d7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="de5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="d7" target="d5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_take" value="ЧТО МОЖНО ПОЗАИМСТВОВАТЬ  • формальный подход «целевая функция + ограничения» • отделение модели процесса от задачи оптимизации • идею flowsheet для цепочки АВТ → гидроочистка → блендинг • возможность в будущем встроить ML-модель внутрь Pyomo/OMLT  Лицензия разрешает использование/изменение при соблюдении условий уведомления." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="670" width="490" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="d_adapt" value="ЕСЛИ БЫ МЫ ВНЕДРЯЛИ IDAES  Нам пришлось бы самим: • описать конкретные аппараты и связи • выбрать/создать пакеты свойств • задать параметры процесса • подтвердить физические ограничения • настроить solver • состыковать наши ML-модели с flowsheet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="670" width="490" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="d_later" value="РЕШЕНИЕ ДЛЯ ХАКАТОНА  Не включать IDAES в обязательный MVP.  Причина: это полноценная инженерная платформа, а не готовая модель нашей установки. Без хорошо заданной физической модели она не «догадается», как работает АВТ или гидроочистка.  Оставить как план B / развитие после хакатона." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="670" width="490" height="270" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="593bab188f59" name="6. Наша итоговая архитектура">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a_t" value="Наша итоговая архитектура после разбора репозиториев" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="СЫРЫЕ ДАННЫЕ телеметрия + ЛИМС + ПАК + справочник тегов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="190" width="250" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="НАША ПОДГОТОВКА ДАННЫХ время, единицы, свежесть, пропуски, лаги, режимы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="180" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="ИСПЫТАТЕЛЬНЫЙ СТЕНД InduTS-SS + простой CatBoost baseline сравниваем несколько моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="180" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="QualityAgent замороженная лучшая модель → прогноз серы + неопределённость" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="180" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="Модель реакции процесса? State(t)+Action → State(t+τ) только если данные подтверждают" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="180" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="Генератор 10–50 вариантов действий по 2–4 управляемым параметрам" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="470" width="290" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="Safety / Reliability жёсткие ограничения + свежесть + риск режима" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="470" width="310" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="Сначала отфильтровать опасное, затем ранжировать допустимое" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="480" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a9" value="Orchestrator KEEP / RECOMMEND / REFUSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="480" width="260" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a10" value="Streamlit состояние → проблема → действие → эффект → ограничения" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="470" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ae0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a1" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a2" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a3" target="a4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a4" target="a5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a5" target="a6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a6" target="a7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a7" target="a8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a8" target="a9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ae8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="a9" target="a10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a11" value="LostRunes даёт ПАТТЕРН этого правого контура: варианты → реакция процесса → safety → качество → spec-first выбор." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="980" y="690" width="650" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a12" value="InduTS-SS живёт СБОКУ от production: он помогает выбрать модель, но после выбора рабочему приложению нужен только единый predict()." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="180" y="690" width="650" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="a13" value="IDAES не нужен, чтобы эта схема заработала. Позже он может заменить простой перебор/часть модели процесса на формальную инженерную оптимизацию." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="550" y="830" width="700" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="alg0" value="ЛЕГЕНДА" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="965" width="150" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="alg1" value="Можно взять / подключить" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="965" width="270" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="alg2" value="Нужно адаптировать" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="965" width="270" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="alg3" value="Разрабатываем сами" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="965" width="270" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="alg4" value="Позже / не в MVP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="965" width="270" height="55" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="6858d34ac6a8" name="7. Новый пайплайн разработки">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p_t" value="Как меняется пайплайн разработки до 22 сентября" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="9–10 сен РАЗВЕДКА + КАРКАС  • один общий repo • контракты State/Action/Prediction • один timestamp end-to-end на mock • быстро поднять InduTS-SS отдельно" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="70" y="180" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" value="11–12 сен ДАННЫЕ  • синхронизация источников • свежесть ЛИМС/ПАК • временное разделение • processed dataset • подключить датасет к стенду моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="370" y="180" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" value="13–15 сен МОДЕЛЬ КАЧЕСТВА  • naive baseline • CatBoost/LightGBM • 1 LSTM/GRU или Transformer из InduTS • выбрать победителя • зафиксировать predict()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="670" y="180" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p4" value="16 сен SPIKE: РЕАКЦИЯ ПРОЦЕССА  Проверить, учится ли State(t)+Action → State(t+τ).  Если да — оставляем слой. Если нет — НЕ тратим время и упрощаем." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#ED7D31;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="970" y="180" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p5" value="17–18 сен ОПТИМИЗАТОР + SAFETY  • 2–4 управляющих параметра • локальный перебор • hard constraints • запас по ошибке • KEEP / REFUSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="180" width="260" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="p6" value="19–20 сен АГЕНТЫ + СЦЕНАРИИ  • Quality • Reliability • Optimizer • Orchestrator • normal / high sulfur / bad data / no solution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="180" width="190" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pe0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p1" target="p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pe1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pe2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p3" target="p4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pe3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pe4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p5" target="p6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p7" value="21 сен — FREEZE модель, данные, лаг, ограничения, demo timestamps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="450" y="580" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="p8" value="22 сен — СДАЧА clean run + Streamlit + метрики + README + демо" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="950" y="580" width="400" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pe6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p6" target="p7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pe7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="p7" target="p8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p9" value="Главное изменение: мы больше НЕ тратим дни на написание собственного стенда для LSTM/Transformer. InduTS-SS берёт на себя сравнение глубоких моделей. Освободившееся время уходит на наши уникальные части: данные, безопасность, оптимизацию и интеграцию." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="780" width="1300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="p10" value="IDAES и перенос кода LostRunes не входят в critical path. Они не должны блокировать готовую версию." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="930" width="800" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="f5ac0b25620e" name="8. Команда и нагрузка">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w_t" value="Командная работа при 45–70 ч/нед (≈90–140 часов за две недели)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w1" value="Поток A — ДАННЫЕ  20–30 ч за 2 недели  • загрузка и синхронизация • теги/единицы • свежесть ЛИМС/ПАК • лаги • processed dataset" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="180" width="310" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w2" value="Поток B — КАЧЕСТВО / ML  20–30 ч  • baseline • InduTS-SS • 1–2 сложные модели • метрики • заморозка QualityAgent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="310" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w3" value="Поток C — ОПТИМИЗАЦИЯ / SAFETY  20–30 ч  • управляющие параметры • spike модели реакции • перебор вариантов • ограничения • отказ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="780" y="180" width="310" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w4" value="Поток D — ИНТЕГРАЦИЯ / DEMO  20–30 ч  • контракты • orchestrator • тесты • Streamlit • Docker/README" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="180" width="310" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w5" value="РЕЗЕРВ / ПОДДЕРЖКА  10–20 ч  • EDA • QA сценариев • документация • помочь текущему bottleneck • опциональные эксперименты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="180" width="250" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="w6" value="Как наложить на вашу доступность" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="120" y="540" width="430" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w7" value="1 человек · 15–20 ч/нед → держит интеграционный critical path и помогает самому узкому месту" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E4DFEC;strokeColor=#8064A2;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="120" y="640" width="430" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="w8" value="2 человека · 10–15 ч/нед → основные владельцы Data и ML/Optimization" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DDEBF7;strokeColor=#4472C4;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="680" y="640" width="430" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="w9" value="2 человека · 5–10 ч/нед → ограниченные законченные куски: QA, EDA, configs, UI, один эксперимент; не отдавать им критический одиночный компонент" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4D6;strokeColor=#ED7D31;fontSize=15;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="620" width="430" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="w10" value="Правило: задача считается законченной не когда «ноутбук работает у автора», а когда результат в main и проходит единый end-to-end тест." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="870" width="1200" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="553bc1f7c226" name="9. Решения для MVP">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x_t" value="Что реально используем в MVP, а что оставляем на потом" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1F4E78;fontColor=#FFFFFF;strokeColor=#17365D;fontSize=24;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="40" width="1600" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xh1" value="Компонент" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="150" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xh2" value="Решение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="150" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xh3" value="Почему" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="150" width="650" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xh4" value="Источник идеи" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="150" width="380" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xc0" value="Подготовка и синхронизация данных" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="240" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd0" value="ПИШЕМ САМИ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw0" value="Наши источники и правила ЛИМС/ПАК уникальны" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="240" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs0" value="Наше ТЗ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="240" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc1" value="Сравнение глубоких моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="328" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd1" value="ИСПОЛЬЗУЕМ СТЕНД" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="328" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw1" value="Не писать заново training loop и десятки моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="328" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs1" value="InduTS-SS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="328" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc2" value="Основная модель серы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="416" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd2" value="ВЫБИРАЕМ ПО МЕТРИКАМ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="416" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw2" value="CatBoost vs 1–2 модели времени; никакой религии вокруг LSTM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="416" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs2" value="Наши данные + InduTS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="416" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc3" value="Модель реакции процесса" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="504" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd3" value="SPIKE, НЕ ОБЯЗАТЕЛЬНО" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="504" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw3" value="Берём только если исторические изменения позволяют её проверить" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="504" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs3" value="LostRunes pattern" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="504" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc4" value="Поиск режимов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="592" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd4" value="ПИШЕМ ПРОСТОЙ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#BF9000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="592" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw4" value="10–50 вариантов достаточно для MVP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="592" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs4" value="LostRunes pattern" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="592" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc5" value="Safety / REFUSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="680" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd5" value="ПИШЕМ САМИ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4CCCC;strokeColor=#C00000;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="680" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw5" value="Это центральное требование нашего задания" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="680" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs5" value="Наше ТЗ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="680" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc6" value="IDAES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="768" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd6" value="НЕ В MVP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="768" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw6" value="Слишком большой порог входа; потребует физической модели установки" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="768" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs6" value="IDAES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="768" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xc7" value="SRU LSTM repo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="856" width="280" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xd7" value="REFERENCE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E7E6E6;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="370" y="856" width="260" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xw7" value="Полезен для обучения/сравнения, но не закрывает архитектуру" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="856" width="650" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xs7" value="SRU LSTM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#7F7F7F;fontSize=15;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="856" width="380" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="xnote" value="Юридически: у InduTS-SS есть Apache-2.0; IDAES разрешает перераспространение/изменение при выполнении условий лицензии. Для LostRunes и SRU LSTM явная лицензия на просмотренных страницах не обнаружена — код лучше не копировать без отдельного разрешения." style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=14;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="230" y="970" width="1340" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

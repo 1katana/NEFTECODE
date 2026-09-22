@@ -1,0 +1,31 @@
+# Управляемый список индикаторов качества и настроек модели
+indicators:
+  - cloudpoint
+  - cloudpoint_1
+  - ebp_t
+  - ibp_t
+  - i250
+  - i350
+  - 50_t
+  - 90_t
+  - 95_t
+  - d15
+  - mg_sulfur
+  - mass_sulfur
+  - flashpoint
+  - pourpoint
+  - cetane_number
+  - filterabilitylimit_t
+  - cfpp
+  - 24_2000_mg_sulfur
+
+critical:
+  - mg_sulfur
+  - d15
+  - flashpoint
+  - 95_t
+
+target_indicator: mg_sulfur
+target_column: mg_sulfur_value
+sulfur_limit: 10.0
+regime_features: []    # QualityAgent не видит сырые режимные теги

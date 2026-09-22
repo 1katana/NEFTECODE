@@ -1,0 +1,9 @@
+{
+  "controls": {},
+  "technology_bounds": {},
+  "stale_minutes": 60,
+  "flatline_minutes": 720,
+  "minimum_feature_coverage": 0.8,
+  "medium_score": 0.35,
+  "high_score": 0.7
+}

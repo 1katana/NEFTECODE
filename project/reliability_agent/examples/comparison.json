@@ -1,0 +1,358 @@
+{
+  "current": {
+    "reliability_risk": "LOW",
+    "risk_score": 0.21614510233974643,
+    "data_confidence": "MEDIUM",
+    "warnings": [
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "hyd_regime:HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+    ],
+    "timestamp": "2023-02-01 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": 0.21614510233974643,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 1.0,
+        "risk_score": 0.21614510233974643,
+        "data_confidence": "MEDIUM",
+        "warnings": [
+          "HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_p24",
+            "value": 0.6190220713615417,
+            "score": 0.21614510233974643,
+            "direction": "high",
+            "reference_p001": 0.5280976855754852,
+            "reference_p999": 0.6513174122571946,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          },
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_f15",
+            "value": 2896.908935546875,
+            "score": 0.12519803517897535,
+            "direction": "low",
+            "reference_p001": 2193.8661181640623,
+            "reference_p999": 3893.478500976563,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.21614510233974643
+      }
+    },
+    "risk_factors": [
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_p24",
+        "value": 0.6190220713615417,
+        "score": 0.21614510233974643,
+        "direction": "high",
+        "reference_p001": 0.5280976855754852,
+        "reference_p999": 0.6513174122571946,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_f15",
+        "value": 2896.908935546875,
+        "score": 0.12519803517897535,
+        "direction": "low",
+        "reference_p001": 2193.8661181640623,
+        "reference_p999": 3893.478500976563,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      }
+    ],
+    "candidate_id": null,
+    "candidate_controls_supported": null,
+    "observation_issues": {},
+    "technology_limits_configured": false
+  },
+  "candidate": {
+    "reliability_risk": "HIGH",
+    "risk_score": 1.0,
+    "data_confidence": "LOW",
+    "warnings": [
+      "CANDIDATE_IS_STATIC_PROXY_NOT_CAUSAL_RESPONSE",
+      "TECHNOLOGY_LIMITS_NOT_CONFIGURED",
+      "UNCONFIRMED_CONTROL:avt_t55",
+      "avt_k10:HIGH_HISTORICAL_DEVIATION_NOT_FAILURE_PROBABILITY",
+      "avt_p3:HIGH_HISTORICAL_DEVIATION_NOT_FAILURE_PROBABILITY",
+      "hyd_regime:HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+    ],
+    "timestamp": "2023-02-01 12:00:00",
+    "model_version": "1.0.0",
+    "scope": [
+      "avt_p3",
+      "avt_k10",
+      "avt_k2",
+      "hyd_regime"
+    ],
+    "score_meaning": "historical_regime_risk_proxy_not_failure_probability",
+    "partial_risk_score": 1.0,
+    "assets": {
+      "avt_p3": {
+        "name": "АВТ: режим печи П-3",
+        "feature_coverage": 1.0,
+        "risk_score": 1.0,
+        "data_confidence": "HIGH",
+        "warnings": [
+          "HIGH_HISTORICAL_DEVIATION_NOT_FAILURE_PROBABILITY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "avt_t55",
+            "value": 402.6118469238281,
+            "score": 1.0,
+            "direction": "high",
+            "reference_p001": 368.51483764648435,
+            "reference_p999": 387.85287399291997,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          },
+          {
+            "code": "UNUSUAL_COMBINATION",
+            "kind": "ml_domain",
+            "score": 1.0,
+            "description": "Нетипичное совместное состояние сигналов группы"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 1.0,
+        "reference_tail_score": 1.0
+      },
+      "avt_k10": {
+        "name": "АВТ: режим К-10",
+        "feature_coverage": 1.0,
+        "risk_score": 1.0,
+        "data_confidence": "HIGH",
+        "warnings": [
+          "HIGH_HISTORICAL_DEVIATION_NOT_FAILURE_PROBABILITY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "avt_t55",
+            "value": 402.6118469238281,
+            "score": 1.0,
+            "direction": "high",
+            "reference_p001": 368.41392739868166,
+            "reference_p999": 387.83091918945314,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 1.0
+      },
+      "avt_k2": {
+        "name": "АВТ: режим К-2",
+        "feature_coverage": 1.0,
+        "risk_score": 0.0,
+        "data_confidence": "HIGH",
+        "warnings": [],
+        "risk_factors": [],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.0
+      },
+      "hyd_regime": {
+        "name": "24-2000: статистическая оценка режима",
+        "feature_coverage": 1.0,
+        "risk_score": 0.21614510233974643,
+        "data_confidence": "MEDIUM",
+        "warnings": [
+          "HYD_MAPPING_UNVERIFIED_STATISTICAL_INTERPRETATION_ONLY"
+        ],
+        "risk_factors": [
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_p24",
+            "value": 0.6190220713615417,
+            "score": 0.21614510233974643,
+            "direction": "high",
+            "reference_p001": 0.5280976855754852,
+            "reference_p999": 0.6513174122571946,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          },
+          {
+            "code": "HISTORICAL_TAIL",
+            "kind": "model_reference",
+            "tag": "hyd_f15",
+            "value": 2896.908935546875,
+            "score": 0.12519803517897535,
+            "direction": "low",
+            "reference_p001": 2193.8661181640623,
+            "reference_p999": 3893.478500976563,
+            "description": "Отклонение от исторической области; не паспортный предел"
+          }
+        ],
+        "status": "assessed",
+        "anomaly_score": 0.0,
+        "reference_tail_score": 0.21614510233974643
+      }
+    },
+    "risk_factors": [
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "avt_t55",
+        "value": 402.6118469238281,
+        "score": 1.0,
+        "direction": "high",
+        "reference_p001": 368.51483764648435,
+        "reference_p999": 387.85287399291997,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "avt_p3"
+      },
+      {
+        "code": "UNUSUAL_COMBINATION",
+        "kind": "ml_domain",
+        "score": 1.0,
+        "description": "Нетипичное совместное состояние сигналов группы",
+        "asset": "avt_p3"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "avt_t55",
+        "value": 402.6118469238281,
+        "score": 1.0,
+        "direction": "high",
+        "reference_p001": 368.41392739868166,
+        "reference_p999": 387.83091918945314,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "avt_k10"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_p24",
+        "value": 0.6190220713615417,
+        "score": 0.21614510233974643,
+        "direction": "high",
+        "reference_p001": 0.5280976855754852,
+        "reference_p999": 0.6513174122571946,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      },
+      {
+        "code": "HISTORICAL_TAIL",
+        "kind": "model_reference",
+        "tag": "hyd_f15",
+        "value": 2896.908935546875,
+        "score": 0.12519803517897535,
+        "direction": "low",
+        "reference_p001": 2193.8661181640623,
+        "reference_p999": 3893.478500976563,
+        "description": "Отклонение от исторической области; не паспортный предел",
+        "asset": "hyd_regime"
+      }
+    ],
+    "candidate_id": "hypothetical_temperature_plus_20",
+    "candidate_controls_supported": false,
+    "observation_issues": {},
+    "technology_limits_configured": false
+  },
+  "current_risk": 0.21614510233974643,
+  "candidate_risk": 1.0,
+  "risk_delta": 0.7838548976602535,
+  "drivers": [
+    {
+      "asset": "avt_p3",
+      "current_score": 0.0,
+      "candidate_score": 1.0,
+      "candidate_factors": [
+        {
+          "code": "HISTORICAL_TAIL",
+          "kind": "model_reference",
+          "tag": "avt_t55",
+          "value": 402.6118469238281,
+          "score": 1.0,
+          "direction": "high",
+          "reference_p001": 368.51483764648435,
+          "reference_p999": 387.85287399291997,
+          "description": "Отклонение от исторической области; не паспортный предел"
+        },
+        {
+          "code": "UNUSUAL_COMBINATION",
+          "kind": "ml_domain",
+          "score": 1.0,
+          "description": "Нетипичное совместное состояние сигналов группы"
+        }
+      ]
+    },
+    {
+      "asset": "avt_k10",
+      "current_score": 0.0,
+      "candidate_score": 1.0,
+      "candidate_factors": [
+        {
+          "code": "HISTORICAL_TAIL",
+          "kind": "model_reference",
+          "tag": "avt_t55",
+          "value": 402.6118469238281,
+          "score": 1.0,
+          "direction": "high",
+          "reference_p001": 368.41392739868166,
+          "reference_p999": 387.83091918945314,
+          "description": "Отклонение от исторической области; не паспортный предел"
+        }
+      ]
+    }
+  ]
+}
