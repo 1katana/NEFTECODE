@@ -8,6 +8,58 @@
 
 ## Быстрый запуск
 
+### Docker Compose — рекомендуемый способ
+
+Требования:
+
+- Docker Desktop с Linux containers;
+- свободные порты `4173` и `8000`.
+
+Откройте PowerShell в корне репозитория и выполните:
+
+```powershell
+Set-Location project
+docker compose up --build -d
+docker compose ps
+```
+
+Первый запуск собирает image и может занять несколько минут. После запуска оба
+сервиса в выводе `docker compose ps` должны перейти в состояние `healthy`.
+
+Доступные адреса:
+
+- операторский интерфейс: <http://127.0.0.1:4173>;
+- Swagger API: <http://127.0.0.1:8000/docs>;
+- состояние системы: <http://127.0.0.1:8000/api/v1/health>;
+- офлайн-бенчмарк: [project/integration/dashboard/benchmark.html](project/integration/dashboard/benchmark.html).
+
+Проверить API:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/api/v1/health
+```
+
+Для текущего релиза статус `READY_FOR_SHADOW_WITH_BLOCKERS` ожидаем: система
+работает, но не объявлена production-контуром. Журналы обоих сервисов:
+
+```powershell
+docker compose logs -f
+```
+
+Выйдите из просмотра журналов через `Ctrl+C`.
+
+Остановить стек:
+
+```powershell
+docker compose down
+```
+
+Runtime-журналы сохраняются в именованном volume `neftecode-runtime`. Для
+последующих запусков достаточно `docker compose up -d`; после изменения кода
+используйте `docker compose up --build -d`.
+
+### Локальный запуск в Windows без Docker
+
 Требования:
 
 - Windows 10/11;
@@ -49,21 +101,6 @@ Invoke-RestMethod http://127.0.0.1:8000/api/v1/health
 ```
 
 Остановить сервисы можно сочетанием `Ctrl+C` в обоих терминалах.
-
-### Запуск в Docker
-
-Активные model bundles H и C должны находиться в каталогах, указанных в
-`project/Quality_neftecode/configs/runtime_shadow.yaml`. Затем выполните:
-
-```powershell
-Set-Location project
-docker compose up --build -d
-docker compose ps
-```
-
-После запуска доступны операторский интерфейс <http://127.0.0.1:4173>, API
-<http://127.0.0.1:8000> и Swagger <http://127.0.0.1:8000/docs>. Runtime-журналы
-сохраняются в именованном Docker volume. Остановка: `docker compose down`.
 
 ## Что решает проект
 

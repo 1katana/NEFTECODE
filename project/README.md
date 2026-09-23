@@ -8,18 +8,51 @@ Workspace объединяет пять устанавливаемых паке�
 - `orchestrator` — детерминированный fail-closed decision engine;
 - `integration` — composition root и HTTP API для frontend и блоков коллег.
 
-## Быстрый запуск
+## Быстрый запуск в Docker
+
+```powershell
+docker compose up --build -d
+docker compose ps
+```
+
+После запуска:
+
+- операторский интерфейс: `http://127.0.0.1:4173`;
+- API: `http://127.0.0.1:8000`;
+- Swagger: `http://127.0.0.1:8000/docs`;
+- health: `http://127.0.0.1:8000/api/v1/health`.
+
+Оба сервиса должны перейти в состояние `healthy`. Проверка API:
+
+```powershell
+Invoke-RestMethod http://127.0.0.1:8000/api/v1/health
+```
+
+Для текущего релиза статус `READY_FOR_SHADOW_WITH_BLOCKERS` ожидаем: система
+работает, но не объявлена production-контуром. Просмотр журналов и остановка:
+
+```powershell
+docker compose logs -f
+# После выхода через Ctrl+C:
+docker compose down
+```
+
+Первый запуск собирает image и может занять несколько минут. Для последующих
+запусков достаточно `docker compose up -d`; после изменения кода добавьте `--build`.
+Runtime-журналы сохраняются в именованном volume `neftecode-runtime`.
+
+## Локальный запуск без Docker
 
 ```powershell
 uv sync --project integration --extra dev
 .\run-api.ps1
 ```
 
-После запуска:
+Во втором терминале из каталога `project` запустите frontend:
 
-- API: `http://127.0.0.1:8000`;
-- Swagger: `http://127.0.0.1:8000/docs`;
-- health: `http://127.0.0.1:8000/api/v1/health`.
+```powershell
+.\.venv\Scripts\python.exe -m http.server 4173 --bind 127.0.0.1 --directory orchestrator/frontend/dist
+```
 
 Авторизация для хакатона отключена. CORS уже разрешает локальные frontend-порты и
 `https://neftecode-orchestrator-console.yabalbes15.chatgpt.site`.
@@ -79,12 +112,6 @@ holdout ещё не накоплен.
 
 ## Операторский экран
 
-Запустите API командой `.\run-api.ps1`. В другом терминале из корня проекта:
-
-```powershell
-.\.venv\Scripts\python.exe -m http.server 4173 --directory orchestrator/frontend/dist
-```
-
 Откройте `http://127.0.0.1:4173`. Экран проверит API на `127.0.0.1:8000` и
 автоматически покажет результат расчётной смеси. В списке API доступны
 исторический срез и девять what-if сценариев. Выбор «Пример интерфейса» показывает
@@ -93,26 +120,9 @@ holdout ещё не накоплен.
 просмотрщик этих примеров. Границы достоверности расчётной смеси описаны в
 [аудите рецептуры и управлений](neftecode_optimizer/docs/recipe_and_controls_audit.md).
 
-## Запуск API и frontend в Docker
+## Состав Docker-сборки
 
-```powershell
-docker compose up --build -d
-docker compose ps
-```
-
-После запуска доступны:
-
-- операторский интерфейс: `http://127.0.0.1:4173`;
-- Swagger: `http://127.0.0.1:8000/docs`;
-- health endpoint: `http://127.0.0.1:8000/api/v1/health`.
-
-Остановка:
-
-```powershell
-docker compose down
-```
-
-В image включаются код, необходимые H+C bundles и модель Reliability; исходные Excel/CSV,
+В image включаются код, операторский frontend, необходимые H+C bundles и модель Reliability; исходные Excel/CSV,
 старые окружения и исследовательские artifacts исключены. Compose автоматически подключает
 именованный volume `neftecode-runtime` к `/app/integration/runtime` для trace и shadow-логов.
 
