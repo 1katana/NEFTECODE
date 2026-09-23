@@ -23,6 +23,7 @@ RUN python -m pip install --no-cache-dir \
     -e /app/neftecode_optimizer \
     -e /app/reliability_agent \
     -e /app/integration \
+    && sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh \
     && chmod +x /usr/local/bin/docker-entrypoint.sh \
     && mkdir -p /app/integration/runtime
 
