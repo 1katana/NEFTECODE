@@ -39,8 +39,7 @@ docker compose ps
 Invoke-RestMethod http://127.0.0.1:8000/api/v1/health
 ```
 
-Для текущего релиза статус `READY_FOR_SHADOW_WITH_BLOCKERS` ожидаем: система
-работает, но не объявлена production-контуром. Журналы обоих сервисов:
+Журналы обоих сервисов:
 
 ```powershell
 docker compose logs -f
