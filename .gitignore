@@ -13,6 +13,8 @@ __pycache__/
 .eggs/
 build/
 dist/
+!/project/orchestrator/frontend/dist/
+!/project/orchestrator/frontend/dist/**
 wheels/
 pip-wheel-metadata/
 

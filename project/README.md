@@ -93,16 +93,37 @@ holdout ещё не накоплен.
 просмотрщик этих примеров. Границы достоверности расчётной смеси описаны в
 [аудите рецептуры и управлений](neftecode_optimizer/docs/recipe_and_controls_audit.md).
 
-## Контейнер для подключения hosted frontend
+## Запуск API и frontend в Docker
 
 ```powershell
-docker build -t neftecode-api .
-docker run --rm -p 8000:8000 neftecode-api
+docker compose up --build -d
+docker compose ps
 ```
 
-В image включаются код и необходимые H+C bundles и модель Reliability; исходные Excel/CSV,
-старые окружения и исследовательские artifacts исключены. Для длительного shadow
-режима каталог `/app/integration/runtime` нужно подключить как persistent volume.
+После запуска доступны:
+
+- операторский интерфейс: `http://127.0.0.1:4173`;
+- Swagger: `http://127.0.0.1:8000/docs`;
+- health endpoint: `http://127.0.0.1:8000/api/v1/health`.
+
+Остановка:
+
+```powershell
+docker compose down
+```
+
+В image включаются код, необходимые H+C bundles и модель Reliability; исходные Excel/CSV,
+старые окружения и исследовательские artifacts исключены. Compose автоматически подключает
+именованный volume `neftecode-runtime` к `/app/integration/runtime` для trace и shadow-логов.
+
+Перед сборкой должны существовать два активных bundle:
+
+- `Quality_neftecode/artifacts/experiments/H_full_pak_residual_oof_calibration`;
+- `Quality_neftecode/artifacts/experiments/C_telemetry_only`.
+
+Оба активных bundle входят в release-сборку. Если они отсутствуют, контейнер завершится
+с понятным сообщением и перечислит недостающие пути. Проверить журнал можно командой
+`docker compose logs api`.
 
 Материалы для защиты собраны в [submission](submission/DEMO_CHECKLIST.md): там
 есть четырёхминутный сценарий показа и финальная презентация.

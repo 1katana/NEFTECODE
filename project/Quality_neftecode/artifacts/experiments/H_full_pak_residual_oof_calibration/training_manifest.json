@@ -1,0 +1,21 @@
+{
+  "training_id": "H_full_pak_residual_oof_calibration:2026-09-18T20:49:47.855236+00:00",
+  "created_at_utc": "2026-09-18T20:49:47.855236+00:00",
+  "schema_version": "quality-lims-samples-v2-pak-residual",
+  "schema_sha256": "53cda8d6820051c7046b6f492b26b13a6e6c6e585cdb4c8146d02f0d96b70c3d",
+  "model_variant": "full",
+  "regression_target_max": null,
+  "regression_mode": "pak_residual",
+  "residual_scale": 1.0,
+  "apply_calibrator": true,
+  "artifacts": [
+    "sulfur_reg.cbm",
+    "sulfur_reg_lo.cbm",
+    "sulfur_reg_hi.cbm",
+    "sulfur_clf.cbm",
+    "calibrator.pkl",
+    "feature_schema.json",
+    "metrics.json",
+    "operating_thresholds.json"
+  ]
+}

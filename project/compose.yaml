@@ -1,0 +1,42 @@
+services:
+  api:
+    image: neftecode-api:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - neftecode-runtime:/app/integration/runtime
+
+  frontend:
+    image: neftecode-api:local
+    pull_policy: never
+    depends_on:
+      api:
+        condition: service_healthy
+    command:
+      - python
+      - -m
+      - http.server
+      - "4173"
+      - --bind
+      - 0.0.0.0
+      - --directory
+      - /app/orchestrator/frontend/dist
+    ports:
+      - "4173:4173"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib.request; urllib.request.urlopen('http://127.0.0.1:4173/', timeout=3)
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3
+
+volumes:
+  neftecode-runtime:

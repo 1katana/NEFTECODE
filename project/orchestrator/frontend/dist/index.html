@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Операторская консоль оркестратора Нефтекод: решения RECOMMEND, KEEP и REFUSE."
+    />
+    <meta name="theme-color" content="#091119" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23091119'/%3E%3Cpath d='M12 42V22h8l12 12V22h8v20h-8L20 30v12z' fill='%23f4b942'/%3E%3Ccircle cx='49' cy='18' r='5' fill='%2347d7a3'/%3E%3C/svg%3E"
+    />
+    <title>Нефтекод — Оркестратор</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#decision-panel">К решению</a>
+
+    <header class="topbar">
+      <div class="header-inner">
+        <div class="brand" aria-label="Нефтекод">
+          <strong>НЕФТЕКОД</strong>
+          <small>операторский советчик</small>
+        </div>
+
+        <div class="top-actions">
+          <button class="button button-secondary" id="copy-button" type="button">
+            Копировать решение
+          </button>
+          <button class="button button-secondary" id="import-button" type="button">
+            Импорт JSON
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="task-header" aria-labelledby="scenario-heading">
+        <div class="task-heading">
+          <h1 id="scenario-heading">Решение по текущему режиму</h1>
+        </div>
+
+        <div class="mode-switch" role="tablist" aria-label="Источник расчёта">
+          <button
+            class="mode-button active"
+            id="mode-api"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="api-controls"
+          >
+            Текущий расчёт
+          </button>
+          <button
+            class="mode-button"
+            id="mode-demo"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="demo-controls"
+          >
+            Демо-примеры
+          </button>
+        </div>
+      </section>
+
+      <section class="run-controls api-bar" id="api-controls" role="tabpanel" aria-labelledby="mode-api">
+        <label class="control-field">
+          <span>Сценарий</span>
+          <select id="api-select" aria-label="Запрос API" disabled></select>
+        </label>
+        <button class="button button-primary" id="api-run" type="button" disabled>
+          Выполнить расчёт
+        </button>
+        <button class="button button-secondary" id="upload-test-data" type="button">
+          Загрузить свои тестовые данные
+        </button>
+      </section>
+
+      <section
+        class="run-controls scenario-bar"
+        id="demo-controls"
+        role="tabpanel"
+        aria-labelledby="mode-demo"
+        hidden
+      >
+        <label class="control-field scenario-select-wrap">
+          <span>Пример</span>
+          <select id="scenario-select" aria-describedby="scenario-description"></select>
+        </label>
+        <p id="scenario-description" class="scenario-description"></p>
+      </section>
+
+      <section class="decision-grid" aria-label="Результат оркестрации">
+        <article class="panel decision-panel" id="decision-panel" aria-live="polite">
+          <div class="decision-ribbon">
+            <span id="active-source" class="source-label">Контрактный пример · не запуск API</span>
+            <span id="decision-latency">решение сформировано</span>
+          </div>
+
+          <div class="decision-main">
+            <div class="decision-heading">
+              <img
+                class="decision-pictogram"
+                id="decision-pictogram"
+                src="assets/decision-recommend.png?v=2"
+                alt="Задумчивая капля"
+                width="72"
+                height="72"
+              />
+              <div>
+                <div class="decision-code" id="decision-code">—</div>
+              </div>
+            </div>
+            <p id="decision-explanation"></p>
+            <p class="next-step" id="decision-next-step"></p>
+          </div>
+
+          <div id="recommendation-block" class="recommendation-block" hidden>
+            <div class="subheading">
+              <h3>Изменение режима</h3>
+              <span id="candidate-id">—</span>
+            </div>
+            <div id="recommended-controls" class="change-grid"></div>
+            <div class="prediction-strip">
+              <div><span>Ожидаемая сера</span><strong id="predicted-quality">—</strong></div>
+              <div><span>Риск нарушения</span><strong id="predicted-violation">—</strong></div>
+              <div><span>Итоговый score</span><strong id="predicted-score">—</strong></div>
+            </div>
+          </div>
+
+          <details class="reason-block inline-disclosure">
+            <summary>Технические причины решения</summary>
+            <div id="reason-codes" class="tag-list"></div>
+          </details>
+        </article>
+
+        <article class="panel current-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Ключевые показатели</p>
+              <h2>Текущий режим</h2>
+            </div>
+            <span id="state-safety-badge" class="status-pill">—</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric-card">
+              <span>Прогноз серы</span>
+              <strong id="quality-value">—</strong>
+              <small id="quality-range">—</small>
+            </div>
+            <div class="metric-card">
+              <span>Риск превышения</span>
+              <strong id="violation-value">—</strong>
+              <div class="risk-track" aria-hidden="true">
+                <span id="violation-bar"></span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <span>Надёжность</span>
+              <strong id="reliability-value">—</strong>
+              <small id="risk-score">—</small>
+            </div>
+          </div>
+
+          <div class="confidence-row">
+            <span>Уверенность по входным данным</span>
+            <strong id="confidence-value">—</strong>
+          </div>
+
+          <details class="controls-block inline-disclosure">
+            <summary>
+              <span>Текущие уставки</span>
+              <span id="state-timestamp">—</span>
+            </summary>
+            <dl id="current-controls" class="data-list"></dl>
+          </details>
+        </article>
+      </section>
+
+      <details class="panel disclosure pipeline-panel">
+        <summary class="panel-heading compact">
+          <div>
+            <p class="eyebrow">Состояние системы</p>
+            <h2>Контур расчёта</h2>
+          </div>
+          <span id="pipeline-total" class="status-pill">—</span>
+        </summary>
+        <ol id="component-list" class="component-list"></ol>
+        <div class="scenario-counts">
+          <div><span>Проверено вариантов</span><strong id="scenario-count">0</strong></div>
+          <div><span>Прошли Safety</span><strong id="safe-count">0</strong></div>
+        </div>
+      </details>
+
+      <section class="details-grid" aria-label="Технические детали">
+        <details class="panel disclosure ranking-panel">
+          <summary class="panel-heading compact">
+            <div>
+              <p class="eyebrow">Оптимизация</p>
+              <h2>Кандидаты оптимизатора</h2>
+            </div>
+            <span id="optimization-status" class="status-pill">—</span>
+          </summary>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ранг</th>
+                  <th>Кандидат</th>
+                  <th>Score</th>
+                  <th>Safety</th>
+                  <th>Изменения</th>
+                </tr>
+              </thead>
+              <tbody id="ranking-body"></tbody>
+            </table>
+          </div>
+          <p id="ranking-empty" class="empty-state" hidden></p>
+        </details>
+
+        <details class="panel disclosure trace-panel">
+          <summary class="panel-heading compact">
+            <div>
+              <p class="eyebrow">Аудит</p>
+              <h2>Трассировка решения</h2>
+            </div>
+          </summary>
+          <dl class="trace-facts">
+            <div><dt>Run ID</dt><dd id="trace-run-id">—</dd></div>
+            <div><dt>Trace ID</dt><dd id="trace-id">—</dd></div>
+            <div><dt>Время состояния</dt><dd id="trace-time">—</dd></div>
+            <div><dt>Schema</dt><dd id="trace-schema">—</dd></div>
+          </dl>
+          <div id="warning-block" class="warning-block" hidden>
+            <span>Предупреждения</span>
+            <ul id="warning-list"></ul>
+          </div>
+          <button class="text-button" id="trace-toggle" type="button" aria-expanded="false">
+            Показать JSON
+          </button>
+          <pre id="trace-json" class="trace-json" hidden><code></code></pre>
+        </details>
+      </section>
+    </main>
+
+    <dialog id="import-dialog" class="import-dialog">
+      <form method="dialog" class="dialog-shell" id="import-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">LOCAL VIEWER</p>
+            <h2>Импорт результата</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="Закрыть" type="submit">×</button>
+        </div>
+        <p>
+          Вставьте <code>FinalDecision</code> или объект с полями <code>input</code> и
+          <code>decision</code>. Данные остаются в браузере.
+        </p>
+        <textarea
+          id="import-textarea"
+          spellcheck="false"
+          placeholder='{"schema_version":"1.0.0","run_id":"...","decision":"KEEP",...}'
+        ></textarea>
+        <p id="import-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" value="cancel" type="submit">Отмена</button>
+          <button class="button button-primary" id="apply-import" value="default" type="button">
+            Показать результат
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="upload-dialog" class="import-dialog">
+      <form class="dialog-shell" id="upload-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">PROCESSING → API</p>
+            <h2>Тестовые данные</h2>
+          </div>
+          <button class="icon-button" id="close-upload" aria-label="Закрыть" type="button">×</button>
+        </div>
+        <p>
+          Файлы будут обработаны через <code>neftecode_processing.py</code>, затем последний
+          временной срез и до 36 предыдущих точек поступят в расчёт. Исходники не сохраняются
+          после завершения запроса.
+        </p>
+        <div class="upload-fields">
+          <label class="control-field">АВТ, CSV<input id="upload-avt" name="avt_tags" type="file" accept=".csv,text/csv" required /></label>
+          <label class="control-field">24-2000, CSV<input id="upload-hydro" name="hydro_tags" type="file" accept=".csv,text/csv" required /></label>
+          <label class="control-field">ЛИМС, XLSX<input id="upload-lims" name="lims_xlsx" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required /></label>
+          <label class="control-field">Справочник тегов, XLSX<input id="upload-tags" name="tags_xlsx" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required /></label>
+          <label class="control-field">ПАК/ВАК, XLSX (необязательно)<input id="upload-pak" name="pak_xlsx" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" /></label>
+        </div>
+        <p id="upload-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" id="cancel-upload" type="button">Отмена</button>
+          <button class="button button-primary" id="submit-upload" type="submit">Обработать и рассчитать</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="data/scenarios.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

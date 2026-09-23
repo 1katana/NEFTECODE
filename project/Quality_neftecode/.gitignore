@@ -5,5 +5,11 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-artifacts/
+artifacts/*
+!artifacts/experiments/
+artifacts/experiments/*
+!artifacts/experiments/C_telemetry_only/
+!artifacts/experiments/C_telemetry_only/**
+!artifacts/experiments/H_full_pak_residual_oof_calibration/
+!artifacts/experiments/H_full_pak_residual_oof_calibration/**
 catboost_info/

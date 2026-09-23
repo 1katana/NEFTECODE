@@ -50,6 +50,21 @@ Invoke-RestMethod http://127.0.0.1:8000/api/v1/health
 
 Остановить сервисы можно сочетанием `Ctrl+C` в обоих терминалах.
 
+### Запуск в Docker
+
+Активные model bundles H и C должны находиться в каталогах, указанных в
+`project/Quality_neftecode/configs/runtime_shadow.yaml`. Затем выполните:
+
+```powershell
+Set-Location project
+docker compose up --build -d
+docker compose ps
+```
+
+После запуска доступны операторский интерфейс <http://127.0.0.1:4173>, API
+<http://127.0.0.1:8000> и Swagger <http://127.0.0.1:8000/docs>. Runtime-журналы
+сохраняются в именованном Docker volume. Остановка: `docker compose down`.
+
 ## Что решает проект
 
 Исходная задача хакатона — построить мультиагентную систему, которая не просто прогнозирует один показатель, а объединяет несколько ролей:

@@ -1,0 +1,21 @@
+{
+  "training_id": "C_telemetry_only:2026-09-18T20:05:56.923155+00:00",
+  "created_at_utc": "2026-09-18T20:05:56.923155+00:00",
+  "schema_version": "quality-lims-samples-v2-telemetry-only",
+  "schema_sha256": "a12e32d7dcba1bb55b87584a51ef8b2891dbef4070f827095d6d7e742e004d0a",
+  "model_variant": "telemetry_only",
+  "regression_target_max": null,
+  "regression_mode": "direct",
+  "residual_scale": 1.0,
+  "apply_calibrator": true,
+  "artifacts": [
+    "sulfur_reg.cbm",
+    "sulfur_reg_lo.cbm",
+    "sulfur_reg_hi.cbm",
+    "sulfur_clf.cbm",
+    "calibrator.pkl",
+    "feature_schema.json",
+    "metrics.json",
+    "operating_thresholds.json"
+  ]
+}
